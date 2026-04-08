@@ -1,0 +1,11 @@
+### POPUP KEY
+###     prefabOverride: Prefab name to use as override
+###     titleId: Title localization ID
+###     subtitleId: Subtitle localization ID
+###     descriptionId: Description localization ID
+###     buttonId: Button localization ID
+###     buttonAction: Action on pressing the popup button(enum)
+###     canCloseWithEsc: PopUp can be close with ESC / Menu button. Default is true. 
+
+popup_tutorial_locating_resources:
+    subtitleId: TXT_Popup_TutorialLocatingResources_Subtitle

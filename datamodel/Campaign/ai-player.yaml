@@ -1,0 +1,44 @@
+mastermind_first_battle:
+  maxBuildings: 100
+  battleLevel: 1
+  isPeaceful: false
+  minLat: 40
+  maxLat: 50
+  minLng: 60
+  maxLng: 70
+  validSectors:
+    - 1
+mastermind_second_battle:
+  maxBuildings: 200
+  battleLevel: 2
+  isPeaceful: false
+  minLat: -45
+  maxLat: -35
+  minLng: 110
+  maxLng: 120
+  validSectors:
+    - 10
+mastermind_third_battle:
+  maxBuildings: 300
+  battleLevel: 3
+  isPeaceful: false
+  minLat: 4
+  maxLat: 6
+  minLng: -60
+  maxLng: -50
+  validSectors:
+    - 8
+mastermind_human_care:
+  maxBuildings: 300
+  battleLevel: 4
+  isPeaceful: true
+  minLat: 4
+  maxLat: 6
+  minLng: -60
+  maxLng: -50
+  validSectors:
+    - 4
+    - 5
+    - 6
+    - 7
+    - 9

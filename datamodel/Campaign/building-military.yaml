@@ -1,0 +1,188 @@
+## DRONE HIVES
+defense_drone_hive:
+  categoryType: !buildingCategory category_military
+  compactName: DronHiv
+  defensiveMissilesPerDay: 10.0
+  description: BE_building_defense_drone_hive_description
+  droneCapacity: 1
+  healthLossPerDay: 0.05
+  inputResources: {}
+  knowledge: !knowledge knowledge_drone_hive
+  maxHealth: 200.0
+  militaryDroneCapacity: 100
+  missileRange: 400.0
+  missileDamage: 5.0
+  name: BE_building_defense_drone_hive_name
+  powerConsumption: 20.0
+  prefabName: DroneHive_1
+  rubblePrefabName: RubblePile_S
+  progressPerDay: 0.1
+  requiredConstructionResources:
+    !resource resource_aluminum: 5
+    !resource resource_steel: 5
+    !resource resource_electronics: 5
+    !resource resource_parts: 5
+  requiredResourceVein: null
+  reservedRadius: 20.0
+  waySnapRadius: 10.0
+  rivalIconName: BuildIcons_Rival/Icon_DroneHive_1
+  iconName: BuildIcons/Icon_DroneHive_1
+  categorySoundOverride: Sfx_Gameplay_BuildingBIP_Military_DroneHive
+defense_drone_hive_2:
+  categoryType: !buildingCategory category_military
+  isUpgradeTo:
+    - !building defense_drone_hive
+  compactName: DronHi2
+  defensiveMissilesPerDay: 20.0
+  description: BE_building_defense_drone_hive_2_description
+  droneCapacity: 1
+  healthLossPerDay: 0.05
+  inputResources: {}
+  knowledge: null
+  maxHealth: 300.0
+  militaryDroneCapacity: 200
+  missileRange: 500.0
+  missileDamage: 10.0 
+  name: BE_building_defense_drone_hive_2_name
+  powerConsumption: 35.0
+  prefabName: DroneHive_2
+  rubblePrefabName: RubblePile_S
+  progressPerDay: 0.1
+  requiredConstructionResources:
+    !resource resource_aluminum: 10
+    !resource resource_steel: 10
+    !resource resource_electronics: 10
+    !resource resource_parts: 10
+  requiredResourceVein: null
+  reservedRadius: 20.0
+  waySnapRadius: 10.0
+  rivalIconName: BuildIcons_Rival/Icon_DroneHive_2
+  iconName: BuildIcons/Icon_DroneHive_2
+defense_drone_hive_3:
+  categoryType: !buildingCategory category_military
+  isUpgradeTo:
+    - !building defense_drone_hive_2
+  compactName: DronHi3
+  defensiveMissilesPerDay: 30.0
+  description: BE_building_defense_drone_hive_3_description
+  droneCapacity: 1
+  healthLossPerDay: 0.05
+  inputResources: {}
+  knowledge: null
+  maxHealth: 400.0
+  militaryDroneCapacity: 300
+  missileRange: 600.0
+  missileDamage: 15.0
+  name: BE_building_defense_drone_hive_3_name
+  powerConsumption: 50.0
+  prefabName: DroneHive_3
+  rubblePrefabName: RubblePile_S
+  progressPerDay: 0.1
+  requiredConstructionResources:
+    !resource resource_aluminum: 20
+    !resource resource_steel: 20
+    !resource resource_electronics: 20
+    !resource resource_parts: 20
+  requiredResourceVein: null
+  reservedRadius: 20.0
+  waySnapRadius: 10.0
+  rivalIconName: BuildIcons_Rival/Icon_DroneHive_3
+  iconName: BuildIcons/Icon_DroneHive_3
+### ASSAULT DRONE FACTORIES
+building_military_drone_factory:
+  categoryType: !buildingCategory category_military
+  compactName: AssaFac
+  description: BE_building_military_drone_factory_description
+  droneCapacity: 1
+  healthLossPerDay: 0.05
+  inputResources:
+    !resource resource_polymers: 1
+    !resource resource_electronics: 1
+  knowledge: !knowledge knowledge_military_drone_factory
+  maxHealth: 200.0
+  name: BE_building_military_drone_factory_name
+  outputQuantity: 10
+  outputResource: !resource resource_military_drone
+  powerConsumption: 20.0
+  powerPriority: 2.0
+  prefabName: AssaultDroneFactory_1
+  rubblePrefabName: RubblePile_M
+  progressPerDay: 0.2
+  requiredConstructionResources:
+    !resource resource_aluminum: 3
+    !resource resource_steel: 3
+    !resource resource_electronics: 3
+    !resource resource_parts: 3
+  requiredResourceVein: null
+  reservedRadius: 30.0
+  waySnapRadius: 10.0
+  rivalIconName: BuildIcons_Rival/Icon_AssaultDroneFactory_1
+  iconName: BuildIcons/Icon_AssaultDroneFactory_1
+  progressBarNames:
+    - Progress_Cylinder
+building_military_drone_factory_2:
+  categoryType: !buildingCategory category_military
+  isUpgradeTo:
+    - !building building_military_drone_factory
+  compactName: AssaFa2
+  description: BE_building_military_drone_factory_2_description
+  droneCapacity: 1
+  healthLossPerDay: 0.05
+  inputResources:
+    !resource resource_polymers: 1
+    !resource resource_electronics: 1
+  knowledge: null
+  maxHealth: 300.0
+  name: BE_building_military_drone_factory_2_name
+  outputQuantity: 10
+  outputResource: !resource resource_military_drone
+  powerConsumption: 40.0
+  powerPriority: 2.0
+  prefabName: AssaultDroneFactory_2
+  rubblePrefabName: RubblePile_M
+  progressPerDay: 0.4
+  requiredConstructionResources:
+    !resource resource_aluminum: 10
+    !resource resource_steel: 10
+    !resource resource_electronics: 10
+    !resource resource_parts: 10
+  requiredResourceVein: null
+  reservedRadius: 30.0
+  waySnapRadius: 10.0
+  rivalIconName: BuildIcons_Rival/Icon_AssaultDroneFactory_2
+  iconName: BuildIcons/Icon_AssaultDroneFactory_2
+  progressBarNames:
+    - Progress_Cylinder
+building_military_drone_factory_3:
+  categoryType: !buildingCategory category_military
+  isUpgradeTo:
+    - !building building_military_drone_factory_2
+  compactName: AssaFa3
+  description: BE_building_military_drone_factory_3_description
+  droneCapacity: 1
+  healthLossPerDay: 0.05
+  inputResources:
+    !resource resource_polymers: 1
+    !resource resource_electronics: 1
+  knowledge: null
+  maxHealth: 400.0
+  name: BE_building_military_drone_factory_3_name
+  outputQuantity: 10
+  outputResource: !resource resource_military_drone
+  powerConsumption: 50.0
+  powerPriority: 2.0
+  prefabName: AssaultDroneFactory_3
+  rubblePrefabName: RubblePile_M
+  progressPerDay: 1.0
+  requiredConstructionResources:
+    !resource resource_aluminum: 20
+    !resource resource_steel: 20
+    !resource resource_electronics: 20
+    !resource resource_parts: 20
+  requiredResourceVein: null
+  reservedRadius: 30.0
+  waySnapRadius: 10.0
+  rivalIconName: BuildIcons_Rival/Icon_AssaultDroneFactory_3
+  iconName: BuildIcons/Icon_AssaultDroneFactory_3
+  progressBarNames:
+    - Progress_Cylinder

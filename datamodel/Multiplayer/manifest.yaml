@@ -1,0 +1,11 @@
+### SANDBOX MANIFEST
+modId: Sandbox
+initialSetup: InitialSetup.yaml
+rule:
+  filenames:
+    - rule-patch.yaml
+  replace: true
+randomEvent:
+  filenames:
+    - random-event.yaml
+  replace: false

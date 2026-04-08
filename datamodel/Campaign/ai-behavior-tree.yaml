@@ -1,0 +1,889 @@
+
+
+#TODO Do Fallback for stages when if stage <= 2 fails
+# Maybe a composite node to fallback but repeat/need all to return success
+
+
+# ======= MASON =================================================
+
+#
+#
+#
+#TODO Use battle_level to set some of the vars, like builder_efficiency and military_demand_per_day
+#
+#
+#
+
+build:
+  root:
+    !Node_Sequence
+    name: 'Stages'
+    children:
+      ######################################## FIRST BATTLE ###############################################
+      # ------- STAGE 1 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 1 - Stage 1 - PREPARATION'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage #= 1'
+          - '$is_base_sector_visible == false'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 1'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: true }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 150 }
+            - !Node_SetNumber { variable: defense_reserves , value: 50 }
+            - !Node_SetNumber { variable: swarm_size        , value: 25 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 750 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 0.3 }
+            - !Node_SetNumber { variable: builder_efficiency	, value: 0.5 }   #TODO change each stage? 
+            - !Node_SetNumber { variable: relays_per_base	, value: 5 }  
+      - !Node_If
+        name: 'Battle 1 - Stage 1'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage #= 1'
+          - '$is_base_sector_visible == true'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 1'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: false }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 150 }
+            - !Node_SetNumber { variable: defense_reserves , value: 50 }
+            - !Node_SetNumber { variable: swarm_size        , value: 25 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 750 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 0.3 }
+            - !Node_SetNumber { variable: builder_efficiency	, value: 0.5 }   #TODO change each stage?         
+            - !Node_SetNumber { variable: relays_per_base	, value: 5 }          
+      # ------- STAGE 2 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 1 - Stage 2'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage #= 2'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 2'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: false }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 200 }
+            - !Node_SetNumber { variable: defense_reserves , value: 50 }
+            - !Node_SetNumber { variable: swarm_size        , value: 50 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 2000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 0.45 }
+      # ------- STAGE 3 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 1 - Stage 3'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage #= 3'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 3'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 300 }
+            - !Node_SetNumber { variable: defense_reserves , value: 50 }
+            - !Node_SetNumber { variable: swarm_size        , value: 50 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 2500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 0.6 }
+      # ------- STAGE 4 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 1 - Stage 4'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage #= 4'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 4'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 400 }
+            - !Node_SetNumber { variable: defense_reserves , value: 50 }
+            - !Node_SetNumber { variable: swarm_size        , value: 75 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 2500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 } 
+            - !Node_SetNumber { variable: military_demand_per_day , value: 0.75 }
+      # ------- STAGE 5 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 1 - Stage 5'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage #= 5'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 5'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 500 }
+            - !Node_SetNumber { variable: defense_reserves , value: 100 }
+            - !Node_SetNumber { variable: swarm_size        , value: 100 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 2500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 0.9 }
+      # ------- STAGE 6 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 1 - Stage 6'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage #= 6'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 6'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 600 }
+            - !Node_SetNumber { variable: defense_reserves , value: 50 }
+            - !Node_SetNumber { variable: swarm_size        , value: 75 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 2500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 1.2 }
+      # ------- STAGE 7 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 1 - Stage 7'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage #= 7'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 7'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 700 }
+            - !Node_SetNumber { variable: defense_reserves , value: 100 }
+            - !Node_SetNumber { variable: swarm_size        , value: 100 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 4000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 1.5 }
+      # ------- STAGE 8 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 1 - Stage 8'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage #= 8'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 8'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 800 }
+            - !Node_SetNumber { variable: defense_reserves , value: 100 }
+            - !Node_SetNumber { variable: swarm_size        , value: 100 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 5000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 1.8 }
+      # ------- STAGE 9 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 1 - Stage 9'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage #= 9'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 9'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 900 }
+            - !Node_SetNumber { variable: defense_reserves , value: 100 }
+            - !Node_SetNumber { variable: swarm_size        , value: 100 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 10000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.1 }
+      # ------- STAGE 10 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 1 - Stage 10'
+        criterions:
+          - '$battle_level #= 1'
+          - '$building_stage >= 10'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 10'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1000 }
+            - !Node_SetNumber { variable: defense_reserves , value: 0 }
+            - !Node_SetNumber { variable: swarm_size        , value: 1000 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 999999 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.4 }
+
+
+
+      ######################################## SECOND BATTLE ###############################################
+      # ------- STAGE 1 - PREPARATION -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 1 - Preparation'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage #= 1'
+          - '$is_base_sector_visible == false'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 1'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: true }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 400 }
+            - !Node_SetNumber { variable: defense_reserves , value: 100 }
+            - !Node_SetNumber { variable: swarm_size        , value: 100 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 2500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 0.9 }
+            - !Node_SetNumber { variable: builder_efficiency	, value: 0.5 }   #TODO change each stage?
+            - !Node_SetNumber { variable: relays_per_base	, value: 10 }
+      # ------- STAGE 1 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 1'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage #= 1'
+          - '$is_base_sector_visible == true'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 1'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: false }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 400 }
+            - !Node_SetNumber { variable: defense_reserves , value: 100 }
+            - !Node_SetNumber { variable: swarm_size        , value: 100 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 2500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 0.9 }
+            - !Node_SetNumber { variable: builder_efficiency	, value: 0.5 }   #TODO change each stage?         
+      # ------- STAGE 2 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 2'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage #= 2'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 2'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: false }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 500 }
+            - !Node_SetNumber { variable: defense_reserves , value: 125 }
+            - !Node_SetNumber { variable: swarm_size        , value: 125 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 3000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 1.2 }
+                  # ------- STAGE 3 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 3'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage #= 3'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 3'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 600 }
+            - !Node_SetNumber { variable: defense_reserves , value: 150 }
+            - !Node_SetNumber { variable: swarm_size        , value: 150 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 3500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 1.5 }
+      # ------- STAGE 4 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 4'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage #= 4'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 4'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 700 }
+            - !Node_SetNumber { variable: defense_reserves , value: 150 }
+            - !Node_SetNumber { variable: swarm_size        , value: 150 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 4000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 } 
+            - !Node_SetNumber { variable: military_demand_per_day , value: 1.8 }
+      # ------- STAGE 5 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 5'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage #= 5'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 5'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 800 }
+            - !Node_SetNumber { variable: defense_reserves , value: 150 }
+            - !Node_SetNumber { variable: swarm_size        , value: 150 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 5000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.1 }
+      # ------- STAGE 6 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 6'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage #= 6'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 6'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 900 }
+            - !Node_SetNumber { variable: defense_reserves , value: 175 }
+            - !Node_SetNumber { variable: swarm_size        , value: 175 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 6000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.4 }
+      # ------- STAGE 7 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 7'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage #= 7'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 7'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1000 }
+            - !Node_SetNumber { variable: defense_reserves , value: 200 }
+            - !Node_SetNumber { variable: swarm_size        , value: 200 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 7500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.7 }
+      # ------- STAGE 8 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 8'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage #= 8'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 8'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1100 }
+            - !Node_SetNumber { variable: defense_reserves , value: 150 }
+            - !Node_SetNumber { variable: swarm_size        , value: 200 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 10000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.0 }
+      # ------- STAGE 9 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 9'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage #= 9'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 9'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1300 }
+            - !Node_SetNumber { variable: defense_reserves , value: 100 }
+            - !Node_SetNumber { variable: swarm_size        , value: 200 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 12500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.2 }
+
+      # ------- STAGE 10 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 2 - Stage 10'
+        criterions:
+          - '$battle_level #= 2'
+          - '$building_stage >= 10'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 10'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1500 }
+            - !Node_SetNumber { variable: defense_reserves , value: 0 }
+            - !Node_SetNumber { variable: swarm_size        , value: 1500 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 999999 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.5 }
+
+
+
+      ######################################## THIRD BATTLE ###############################################
+      # ------- STAGE 1 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 3 - Stage 1 - PREPARATION - NO ATTACK'
+        criterions:
+          - '$third_battle_can_attack == false'
+          - '$battle_level #= 3'
+          - '$building_stage #= 1'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 1'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: true }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1000 }
+            - !Node_SetNumber { variable: defense_reserves , value: 1000 }
+            - !Node_SetNumber { variable: swarm_size        , value: 0 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 999999 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.1 }
+            - !Node_SetNumber { variable: builder_efficiency	, value: 0.5 }   #TODO change each stage?
+            - !Node_SetNumber { variable: relays_per_base	, value: 15 }
+      - !Node_If
+        name: 'Battle 3 - Stage 1 - PREPARATION - CAN ATTACK'
+        criterions:
+          - '$third_battle_can_attack == true'
+          - '$is_base_sector_visible == false'
+          - '$battle_level #= 3'
+          - '$building_stage #= 1'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 1'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: true }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1000 }
+            - !Node_SetNumber { variable: defense_reserves , value: 500 }
+            - !Node_SetNumber { variable: swarm_size        , value: 200 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 5000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.1 }
+            - !Node_SetNumber { variable: builder_efficiency	, value: 0.5 }   #TODO change each stage?
+            - !Node_SetNumber { variable: relays_per_base	, value: 15 }
+      - !Node_If
+        name: 'Battle 3 - Stage 1'
+        criterions:
+          - '$third_battle_can_attack == true'
+          - '$is_base_sector_visible == true'
+          - '$battle_level #= 3'
+          - '$building_stage #= 1'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 1'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: false }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1000 }
+            - !Node_SetNumber { variable: defense_reserves , value: 400 }
+            - !Node_SetNumber { variable: swarm_size        , value: 200 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 5000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.1 }
+            - !Node_SetNumber { variable: builder_efficiency	, value: 0.5 }   #TODO change each stage?         
+      # ------- STAGE 2 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 3 - Stage 2'
+        criterions:
+          - '$battle_level #= 3'
+          - '$building_stage #= 2'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 2'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: false }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1200 }
+            - !Node_SetNumber { variable: defense_reserves , value: 450 }
+            - !Node_SetNumber { variable: swarm_size        , value: 225 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 5500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.4 }
+      # ------- STAGE 3 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 3 - Stage 3'
+        criterions:
+          - '$battle_level #= 3'
+          - '$building_stage #= 3'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 3'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1400 }
+            - !Node_SetNumber { variable: defense_reserves , value: 500 }
+            - !Node_SetNumber { variable: swarm_size        , value: 250 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 6000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 100 }            
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.7 }
+      # ------- STAGE 4 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 3 - Stage 4'
+        criterions:
+          - '$battle_level #= 3'
+          - '$building_stage #= 4'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 4'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1300 }
+            - !Node_SetNumber { variable: defense_reserves , value: 500 }
+            - !Node_SetNumber { variable: swarm_size        , value: 250 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 6500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 } 
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.0 }
+      # ------- STAGE 5 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 3 - Stage 5'
+        criterions:
+          - '$battle_level #= 3'
+          - '$building_stage #= 5'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 5'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1800 }
+            - !Node_SetNumber { variable: defense_reserves , value: 550 }
+            - !Node_SetNumber { variable: swarm_size        , value: 275 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 7000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.3 }
+      # ------- STAGE 6 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 3 - Stage 6'
+        criterions:
+          - '$battle_level #= 3'
+          - '$building_stage #= 6'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 6'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 2000 }
+            - !Node_SetNumber { variable: defense_reserves , value: 600 }
+            - !Node_SetNumber { variable: swarm_size        , value: 300 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 10000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.6 }
+      # ------- STAGE 7 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 3 - Stage 7'
+        criterions:
+          - '$battle_level #= 3'
+          - '$building_stage #= 7'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 7'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 2200 }
+            - !Node_SetNumber { variable: defense_reserves , value: 500 }
+            - !Node_SetNumber { variable: swarm_size        , value: 300 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 12500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.9 }
+      # ------- STAGE 8 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 3 - Stage 8'
+        criterions:
+          - '$battle_level #= 3'
+          - '$building_stage #= 8'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 8'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 2400 }
+            - !Node_SetNumber { variable: defense_reserves , value: 400 }
+            - !Node_SetNumber { variable: swarm_size        , value: 300 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 15000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 4.2 }
+      # ------- STAGE 9 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 3 - Stage 9'
+        criterions:
+          - '$battle_level #= 3'
+          - '$building_stage #= 9'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 9'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 2700 }
+            - !Node_SetNumber { variable: defense_reserves , value: 200 }
+            - !Node_SetNumber { variable: swarm_size        , value: 300 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 17500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 4.5 }
+
+      # ------- STAGE 10 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'Battle 3 - Stage 10'
+        criterions:
+          - '$battle_level #= 3'
+          - '$building_stage >= 10'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 10'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 3000 }
+            - !Node_SetNumber { variable: defense_reserves , value: 0 }
+            - !Node_SetNumber { variable: swarm_size        , value: 2000 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 999999 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 4.8 }
+
+
+      ######################################## THIRD BATTLE - SHELLE ###############################################
+      # ------- STAGE 1 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 1 - PREPARATION'
+        criterions:
+          - '$third_battle_can_attack == false'
+          - '$battle_level #= 4'
+          - '$building_stage #= 1'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 1'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: false }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 999999 }
+            - !Node_SetNumber { variable: defense_reserves , value: 999999 }
+            - !Node_SetNumber { variable: swarm_size        , value: 200 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 999999 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.1 }
+            - !Node_SetNumber { variable: builder_efficiency	, value: 0.5 }   #TODO change each stage?
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 1'
+        criterions:
+          - '$third_battle_can_attack == true'
+          - '$battle_level #= 4'
+          - '$building_stage #= 1'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 1'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: false }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1000 }
+            - !Node_SetNumber { variable: defense_reserves , value: 400 }
+            - !Node_SetNumber { variable: swarm_size        , value: 200 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 5000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.1 }
+            - !Node_SetNumber { variable: builder_efficiency	, value: 0.5 }   #TODO change each stage?         
+      # ------- STAGE 2 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 2'
+        criterions:
+          - '$battle_level #= 4'
+          - '$building_stage #= 2'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 2'
+          children:
+            - !Node_SetBool   { variable: fast_constructions, value: false }
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1200 }
+            - !Node_SetNumber { variable: defense_reserves , value: 450 }
+            - !Node_SetNumber { variable: swarm_size        , value: 225 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 5500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }            
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.4 }
+      # ------- STAGE 3 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 3'
+        criterions:
+          - '$battle_level #= 4'
+          - '$building_stage #= 3'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 3'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1400 }
+            - !Node_SetNumber { variable: defense_reserves , value: 500 }
+            - !Node_SetNumber { variable: swarm_size        , value: 250 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 6000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 100 }            
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 2.7 }
+      # ------- STAGE 4 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 4'
+        criterions:
+          - '$battle_level #= 4'
+          - '$building_stage #= 4'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 4'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1600 }
+            - !Node_SetNumber { variable: defense_reserves , value: 500 }
+            - !Node_SetNumber { variable: swarm_size        , value: 250 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 6500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 } 
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.0 }
+      # ------- STAGE 5 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 5'
+        criterions:
+          - '$battle_level #= 4'
+          - '$building_stage #= 5'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 5'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 1800 }
+            - !Node_SetNumber { variable: defense_reserves , value: 550 }
+            - !Node_SetNumber { variable: swarm_size        , value: 275 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 7000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.3 }
+      # ------- STAGE 6 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 6'
+        criterions:
+          - '$battle_level #= 4'
+          - '$building_stage #= 6'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 6'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 2000 }
+            - !Node_SetNumber { variable: defense_reserves , value: 600 }
+            - !Node_SetNumber { variable: swarm_size        , value: 300 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 10000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.6 }
+      # ------- STAGE 7 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 7'
+        criterions:
+          - '$battle_level #= 4'
+          - '$building_stage #= 7'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 7'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 2200 }
+            - !Node_SetNumber { variable: defense_reserves , value: 500 }
+            - !Node_SetNumber { variable: swarm_size        , value: 300 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 12500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 3.9 }
+      # ------- STAGE 8 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 8'
+        criterions:
+          - '$battle_level #= 4'
+          - '$building_stage #= 8'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 8'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 2400 }
+            - !Node_SetNumber { variable: defense_reserves , value: 400 }
+            - !Node_SetNumber { variable: swarm_size        , value: 300 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 15000 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 4.2 }
+      # ------- STAGE 9 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 9'
+        criterions:
+          - '$battle_level #= 4'
+          - '$building_stage #= 9'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 9'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 2700 }
+            - !Node_SetNumber { variable: defense_reserves , value: 200 }
+            - !Node_SetNumber { variable: swarm_size        , value: 300 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 17500 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 4.5 }
+
+      # ------- STAGE 10 BUILDINGS -------------------------------------------------
+      - !Node_If
+        name: 'SHELLE - Battle 3 - Stage 10'
+        criterions:
+          - '$battle_level #= 4'
+          - '$building_stage >= 10'
+        match:
+          !Node_Sequence
+          name: 'Wanted buildings 10'
+          children:
+            - !Node_SetNumber { variable: assault_drones_to_begin_attack, value: 3000 }
+            - !Node_SetNumber { variable: defense_reserves , value: 0 }
+            - !Node_SetNumber { variable: swarm_size        , value: 3000 }
+            - !Node_SetNumber { variable: wave_target_damage, value: 999999 }
+            - !Node_SetNumber { variable: wave_cooldown_set , value: 668 }
+            - !Node_SetNumber { variable: military_demand_per_day , value: 4.8 }
+
+
+
+# ======= COMMANDER =================================================
+
+idle:
+  root:
+    !Node_Sequence
+    children:
+      - !Node_If
+        criterions: ['$can_retaliate == true']
+        match:
+          !Node_Sequence
+          children:
+            - !Node_Print { text: Retaliate }
+            - !Node_SetBool   { variable: can_retaliate, value: false }
+            - !Node_VFSMSetState { state: !BT attack }
+
+end_wave:	
+  root:
+    !Node_If
+    criterions: ['$attacking == true']
+    match:
+      !Node_Sequence
+      children:
+        - !Node_Print { text: Ending wave }
+        - !Node_DispatchFactionEvent { eventType: GevFactionAIWaveEnded }
+        - !Node_SetBool   { variable: attacking, value: false }
+        - !Node_Increment { variable: military_wave }
+        - !Node_Increment { variable: building_stage }
+        - !Node_CopyVar   { destination: military_cooldown, source: wave_cooldown_set }
+        - !Node_SetNumber { variable: player_buildings_destroyed, value: 0 }
+        - !Node_SetNumber { variable: wave_inflicted_building_damage, value: 0 }
+        - !Node_SetNumber { variable: wave_received_building_damage, value: 0 }
+
+
+retreat:    # full retreat
+  root:
+    !Node_Sequence
+    children:
+      - !Node_Retreat {}
+      # TODO wait some time...?
+      - !Node_Subroutine { state: !BT end_wave }
+      - !Node_VFSMSetState { state: !BT idle }
+
+defend:
+  root:
+    !Node_Sequence
+    children:
+      - !Node_Defend {} # DEPRECATED!!!
+      - !Node_If
+        criterions: ['$military_incoming_attack_power <= 0.01']
+        match:
+          !Node_Sequence
+          children:
+            - !Node_Print
+              text: Done defending
+            - !Node_Subroutine { state: !BT end_wave }
+            - !Node_VFSMSetState { state: !BT idle }
+
+start_attack:
+  root:
+    !Node_Sequence
+    children:          
+      - !Node_DispatchFactionEvent
+        eventType: GevFactionAIWaveStarted 
+      - !Node_CopyVar
+        destination: wave_remaining_damage
+        source: wave_target_damage
+      - !Node_Attack # DEPRECATED!!!
+        prioritizeBuildings:
+          !building building_space_elevator                     : 10
+          !building building_terraforming_biodome               : 10
+          !building building_terraforming_ghg_factory           : 10
+          !building building_nuclear_nitrate_extractor          : 10
+          !building building_nuclear_carbonate_extractor        : 10
+          !building building_terraforming_oxygen_release_plant  : 10
+          !building defense_drone_hive                          : 5
+          !building building_military_drone_factory             : 2
+          !building landing_site                                : -1
+      - !Node_SetBool
+        variable: attacking
+        value: true
+
+attack:
+  root:
+    !Node_Sequence
+    children:
+      - !Node_IfElse
+        criterions: [ '$attacking==false' ]
+        match:
+          !Node_Subroutine { state: !BT start_attack }
+        else:
+          !Node_If
+          criterions: [ '$building_stage < 3' ]
+          match:
+            !Node_ReturnUnhealthySwarms { healthFactorThreshold: 0.1 }

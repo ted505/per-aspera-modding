@@ -1,0 +1,505 @@
+###Replaces terraforming_stage_1 from core
+quest_terraforming_stage_1:
+  description: BE_quest_terraforming_stage_1_description
+  name: BE_quest_terraforming_stage_1_name
+  subTitle: BE_Current_Stage_1
+  requirements:
+    - !quest quest_techtree
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$temperature >= 223'
+      name: BE_quest_terraforming_stage_1_task1
+    - !QuestTaskCriterion
+      criterion: '$frozen_co2 <= 5'
+      name: BE_quest_terraforming_stage_1_task2
+  unlockAutomatically: true
+  
+### ONBOARDING QUESTS
+quest_start_up:
+  description: BE_quest_start_up_description
+  name: BE_quest_start_up_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_aluminum_mine
+      name: BE_quest_start_up_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: true
+
+quest_glass_factory:
+  description: BE_quest_glass_factory_description
+  name: BE_quest_glass_factory_name
+  requirements:
+    - !quest quest_start_up
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_silicon_mine
+      name: BE_quest_glass_factory_task1
+      onlyPlayerFaction: true
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_glass_factory
+      name: BE_quest_glass_factory_task2
+      onlyPlayerFaction: true
+  unlockAutomatically: true
+  
+quest_power_up:
+  description: BE_quest_power_up_description
+  name: BE_quest_power_up_name
+  requirements:
+    - !quest quest_glass_factory
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: power_solar_panel_field
+      name: BE_quest_power_up_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: true
+
+quest_industry:
+  description: BE_quest_industry_description
+  name: BE_quest_industry_name
+  requirements:
+    - !quest quest_glass_factory
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_steel_factory
+      name: BE_quest_industry_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: true
+
+quest_drones:
+  description: BE_quest_drones_description
+  name: BE_quest_drones_name
+  requirements:
+    - !quest quest_industry
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_drone_factory
+      name: BE_quest_drones_task1
+      onlyPlayerFaction: true
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_drone_base
+      name: BE_quest_drones_task2
+      onlyPlayerFaction: true
+  unlockAutomatically: true
+
+quest_maintenance:
+  description: BE_quest_maintenance_description
+  name: BE_quest_maintenance_name
+  requirements:
+    - !quest quest_drones
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_maintenance_facility
+      name: BE_quest_maintenance_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: true
+
+quest_scanner:
+  description: BE_quest_scanner_description
+  name: BE_quest_scanner_name
+  requirements:
+    - !quest quest_maintenance
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_areological_scanner
+      name: BE_quest_scanner_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: true
+
+quest_spaceport:
+  description: BE_quest_spaceport_description
+  name: BE_quest_spaceport_name
+  requirements:
+    - !quest quest_scanner
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_spaceport
+      name: BE_quest_spaceport_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: true
+
+quest_colony:
+  description: BE_quest_colony_description
+  name: BE_quest_colony_name
+  requirements:
+    - !quest quest_scanner
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_colony_basic
+      name: BE_quest_colony_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: true
+
+quest_food:
+  description: BE_quest_food_description
+  name: BE_quest_food_name
+  requirements:
+    - !quest quest_scanner
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_water_mine
+      name: BE_quest_food_task1
+      onlyPlayerFaction: true
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_food_factory
+      name: BE_quest_food_task2
+      onlyPlayerFaction: true
+  unlockAutomatically: true
+
+quest_techtree:
+  description: BE_quest_techtree_description
+  name: BE_quest_techtree_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionTechnologyResearchFinished
+      key: 
+      name: BE_quest_techtree_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+###CAMPAIGN QUESTS
+### NUCLEAR SILO ZONE
+quest_more_satellites:
+  description: BE_quest_more_satellites_description
+  name: BE_quest_more_satellites_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialProjectCompleted
+      key: project_launch_satellite_9
+      name: BE_quest_more_satellites_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+quest_research_special_site_abandoned_silo:
+  description: BE_quest_research_special_site_abandoned_silo_description
+  name: BE_quest_research_special_site_abandoned_silo_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialSiteResearched
+      key: special_site_abandoned_nuclear_silo
+      name: BE_quest_research_special_site_abandoned_silo_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+quest_research_special_site_abandoned_colony:
+  description: BE_quest_research_special_site_abandoned_silo_description
+  name: BE_quest_research_special_site_abandoned_colony_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevBuildingBuilt
+      key: building_research_lab
+      name: BE_quest_research_special_site_abandoned_colony_task1
+      onlyPlayerFaction: true
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialSiteResearched
+      key: special_site_abandoned_colony
+      name: BE_quest_research_special_site_abandoned_colony_task2
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+quest_research_special_site_colonie_asterion:
+  description: BE_quest_research_special_site_colonie_asterion_description
+  name: BE_quest_research_special_site_colonie_asterion_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialSiteResearched
+      key: special_site_colonie_asterion
+      name: BE_quest_research_special_site_colonie_asterion_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+quest_research_special_site_greenhouse:
+  description: BE_quest_research_special_site_greenhouse_description
+  name: BE_quest_research_special_site_greenhouse_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialSiteResearched
+      key: special_site_abandoned_greenhouse
+      name: BE_quest_research_special_site_greenhouse_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+quest_research_special_site_biomedical_facility:
+  description: BE_quest_research_special_site_biomedical_facility_description
+  name: BE_quest_research_special_site_biomedical_facility_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialSiteResearched
+      key: special_site_biomedical_facility
+      name: BE_quest_research_special_site_biomedical_facility_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+quest_military_technology:
+  description: BE_quest_military_technology_name
+  name: BE_quest_military_technology_description
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionTechnologyResearchFinished
+      key: technology_defense_drone_hive
+      name: BE_quest_military_technology_task1
+      onlyPlayerFaction: true
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionTechnologyResearchFinished
+      key: technology_assault_drone_factory
+      name: BE_quest_military_technology_task2
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+### AEROBRAKING - OPTIONAL QUEST BY ELYA
+quest_aerobrake_methane_asteroid:
+  description: BE_quest_aerobrake_methane_asteroid_description
+  name: BE_quest_aerobrake_methane_asteroid_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialProjectCompleted
+      key: project_aerobrake_methane_asteroid
+      name: BE_quest_aerobrake_methane_asteroid_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+### INDIAN MISSION ZONE  
+quest_expansion_2:
+  description: BE_quest_expansion_2_description
+  name: BE_quest_expansion_2_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialProjectCompleted
+      key: project_launch_satellite_5
+      name: BE_quest_expansion_2_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+### FIRST ENEMY BASE ZONE  
+quest_expansion_enemy_base:
+  description: BE_quest_expansion_enemy_base_description
+  name: BE_quest_expansion_enemy_base_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialProjectCompleted
+      key: project_launch_satellite_1
+      name: BE_quest_expansion_enemy_base_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+quest_destroy_first_enemy_base:
+  description: BE_quest_destroy_first_enemy_base_description
+  name: BE_quest_destroy_first_enemy_base_name
+  requirements:
+    - !quest quest_expansion_enemy_base
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$is_rival_alive < 1.0'
+      name: BE_quest_destroy_first_enemy_base_task1
+  unlockAutomatically: true
+quest_research_special_site_indian_ruins:
+  description: BE_quest_research_special_site_indian_ruins_description
+  name: BE_quest_research_special_site_indian_ruins_name
+  tasks:
+    - !QuestTaskCriterion
+      name: BE_quest_research_special_site_indian_ruins_task1
+      highlightHandle: special_site_lohitanga_01
+      criterion: '$special_site_researched.special_site_lohitanga_01 > 0.0'
+  unlockAutomatically: false
+quest_research_special_site_indian_ruins_2:
+  description: BE_quest_research_special_site_indian_ruins_2_description
+  name: BE_quest_research_special_site_indian_ruins_2_name
+  requirements:
+    - !quest quest_research_special_site_indian_ruins
+  tasks:
+    - !QuestTaskCriterion
+      name: BE_quest_research_special_site_indian_ruins_2_task1
+      highlightHandle: special_site_lohitanga_02
+      criterion: '$special_site_researched.special_site_lohitanga_02 > 0.0'
+    - !QuestTaskCriterion
+      name: BE_quest_research_special_site_indian_ruins_2_task2
+      highlightHandle: special_site_lohitanga_03
+      criterion: '$special_site_researched.special_site_lohitanga_03 > 0.0'
+    - !QuestTaskCriterion
+      name: BE_quest_research_special_site_indian_ruins_2_task3
+      highlightHandle: special_site_lohitanga_04
+      criterion: '$special_site_researched.special_site_lohitanga_04 > 0.0'
+  unlockAutomatically: false
+quest_military_technology_stage_3:
+  description: BE_quest_military_technology_stage_3_description
+  name: BE_quest_military_technology_stage_3_name
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$research_progress.technology_lane_military_3 >= 1.0'
+      name: BE_quest_military_technology_stage_3_task1
+  unlockAutomatically: false  
+quest_space_technology_stage_3:
+  description: BE_quest_space_technology_stage_3_description
+  name: BE_quest_space_technology_stage_3_name
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$research_progress.technology_lane_space_3 >= 1.0'
+      name: BE_quest_space_technology_stage_3_task1
+  unlockAutomatically: false  
+quest_life_support_technology_stage_3:
+  description: BE_quest_life_support_technology_stage_3_description
+  name: BE_quest_life_support_technology_stage_3_name
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$research_progress.technology_lane_life_support_3 >= 1.0'
+      name: BE_quest_life_support_technology_stage_3_task1
+  unlockAutomatically: false  
+quest_radar_station:
+  description: BE_quest_radar_station_description
+  name: BE_quest_radar_station_name
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialSiteResearched
+      key: special_site_abandoned_radar_station
+      name: BE_quest_radar_station_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+### SECOND BATTLE ZONE
+quest_expansion_second_enemy_base:
+  description: BE_quest_expansion_second_enemy_base_description
+  name: BE_quest_expansion_second_enemy_base_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialProjectCompleted
+      key: project_launch_satellite_10
+      name: BE_quest_expansion_second_enemy_base_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+quest_destroy_second_enemy_base:
+  description: BE_quest_destroy_second_enemy_base_description
+  name: BE_quest_destroy_second_enemy_base_name
+  requirements:
+    - !quest quest_expansion_second_enemy_base
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$is_rival_alive < 1.0'
+      name: BE_quest_destroy_second_enemy_base_task1
+  unlockAutomatically: true
+### FINAL BATTLES
+quest_expansion_third_enemy_base:
+  description: BE_quest_expansion_third_enemy_base_description
+  name: BE_quest_expansion_third_enemy_base_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialProjectCompleted
+      key: project_launch_satellite_8
+      name: BE_quest_expansion_third_enemy_base_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+quest_destroy_third_enemy_base:
+  description: BE_quest_destroy_third_enemy_base_description
+  name: BE_quest_destroy_third_enemy_base_name
+  requirements:
+    - !quest quest_expansion_third_enemy_base
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$is_rival_alive < 1.0'
+      name: BE_quest_destroy_third_enemy_base_task1
+  unlockAutomatically: true
+quest_destroy_human_base:
+  description: BE_quest_destroy_human_base_description
+  name: BE_quest_destroy_human_base_name
+  requirements: []
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$is_rival_alive < 1.0'
+      name: BE_quest_destroy_human_base_task1
+  unlockAutomatically: false
+### OLD LANDING SITE
+quest_research_old_landing_site:
+  description: BE_quest_research_old_landing_site_description
+  name: BE_quest_research_old_landing_site_name
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialSiteResearched
+      key: special_site_old_landing_site
+      name: BE_quest_research_old_landing_site_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+### SEEDSHIP FLEET
+quest_seedship_fleet:
+  description: BE_quest_seedship_fleet_description
+  name: BE_quest_seedship_fleet_name
+  unlockAutomatically: false
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$project_progress.project_seedship_fleet >= 1.0'
+      name: BE_quest_seedship_fleet_task1
+### MARTIAN DEFENSE NETWORK
+quest_martian_defense_network:
+  description: BE_quest_martian_defense_network_description
+  name: BE_quest_martian_defense_network_name
+  unlockAutomatically: false
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$project_progress.project_martian_defense_network >= 1.0'
+      name: BE_quest_martian_defense_network_task1
+### REPAIR COMMUNICATIONS SATELLITE
+quest_repair_communications_satellite:
+  description: BE_quest_repair_communications_satellite_description
+  name: BE_quest_repair_communications_satellite_name
+  unlockAutomatically: false
+  tasks:
+    - !QuestTaskCriterion
+      criterion: '$project_progress.project_repair_communications_satellite >= 1.0'
+      name: BE_quest_repair_communications_satellite_task1
+### FINAL DISCOVERY
+quest_research_special_site_final_discovery:
+  description: BE_quest_research_special_site_final_discovery_description
+  name: BE_quest_research_special_site_final_discovery_name
+  requirements: []
+  tasks:
+    - !QuestTaskEventCounter
+      amount: 1
+      eventType: GevFactionSpecialSiteResearched
+      key: special_site_final_discovery
+      name: BE_quest_research_special_site_final_discovery_task1
+      onlyPlayerFaction: true
+  unlockAutomatically: false
+### TERRAFORMING STAGE 6
+quest_terraforming_stage_6:
+  unlockAutomatically: false

@@ -1,0 +1,4 @@
+category_military:
+  name: TXT_BuildPanel_Military
+  iconName: BuildingCategoriesIcon/Icon_Category_Military
+  factionCountStatId: Military

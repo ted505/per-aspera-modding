@@ -1,0 +1,70 @@
+rule_ship_arrived:
+  actions:
+    - arguments:
+        - popup_colonistArrival
+      command: OpenPopup
+      daysDelay: 1
+    - arguments:
+        - PlayerFaction
+        - ship_arrived
+        - true
+      command: SetBlackboardBool
+      daysDelay: 0.0
+  comments: 
+  criteria:
+    - '$ship_arrived == false'
+  domain: MISSION
+  eventType: GevFactionShipArrived
+  filterKey: null
+  filterOnlyPlayerFaction: true
+  isPlaceholder: false
+  orderId: 60.9
+  singleUse: true
+rule_delay_maintenance_decay:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_no_building_decay
+      command: UnlockEnhancement
+      daysDelay: 0.0
+    - arguments:
+        - PlayerFaction
+        - enhancement_no_building_decay
+      command: DisableEnhancement
+      daysDelay: 200.0
+  comments: 
+  criteria:
+    - '$execution_counter.rule_ship_arrived < 1.0'
+  domain: MISSION
+  eventType: GevUniverseDayPassed
+  filterKey: null
+  filterOnlyPlayerFaction: true
+  isPlaceholder: false
+  orderId: 200.0
+  singleUse: true
+rule_quest_completed_terraforming6:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - building_farm_open_advanced
+      command: UnlockBuilding
+      daysDelay: 0.0
+    - arguments:
+        - PlayerFaction
+        - building_colony_metropolis
+      command: UnlockBuilding
+      daysDelay: 0.0
+    - arguments:
+        - popup_final_technologies_sandbox
+      command: OpenPopup
+      daysDelay: 0.0
+  category: Chapter16
+  comments: 
+  criteria: []
+  domain: MISSION
+  eventType: GevFactionQuestCompleted
+  filterKey: quest_terraforming_stage_6
+  filterOnlyPlayerFaction: true
+  isPlaceholder: false
+  orderId: 240.1
+  singleUse: true

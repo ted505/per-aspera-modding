@@ -1,0 +1,54 @@
+### After tutorial safe zone is lifted
+random_event_sandstorm_winter:
+  eventsPerYear: 1
+  criteria: 
+    - '$is_southern_summer #= 0'	
+    - '$quest_completed.quest_terraforming_stage_2 < 1.0'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_medium] }
+random_event_sandstorm_winter_2:
+  eventsPerYear: 1
+  criteria: 
+    - '$is_southern_summer #= 0'	
+    - '$quest_completed.quest_terraforming_stage_2 < 1.0'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_small] }
+random_event_sandstorm_summer:
+  eventsPerYear: 2
+  criteria: 
+    - '$is_southern_summer #= 1'
+    - '$quest_completed.quest_terraforming_stage_2 < 1.0'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_large] }
+random_event_sandstorm_summer_2:
+  eventsPerYear: 3
+  criteria: 
+    - '$is_southern_summer #= 1'
+    - '$quest_completed.quest_terraforming_stage_2 < 1.0'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_medium] }
+random_event_dust_devils:
+  eventsPerYear: 10
+  criteria: 
+    - '$quest_completed.quest_terraforming_stage_2 < 1.0'
+  actions:
+    - { command: CreateDevilHazard, arguments: [hazard_devil_medium] }
+### STANDARD METEORITES
+random_event_asteroids_small:
+  eventsPerYear: 25
+  criteria: 
+    - '$quest_completed.quest_terraforming_stage_2 < 1.0'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_small] }
+random_event_asteroids_medium:
+  eventsPerYear: 2.5
+  criteria: 
+    - '$quest_completed.quest_terraforming_stage_2 < 1.0'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_medium] }
+random_event_asteroids_large:
+  eventsPerYear: 0.25
+  criteria: 
+    - '$quest_completed.quest_terraforming_stage_2 < 1.0'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_large] }

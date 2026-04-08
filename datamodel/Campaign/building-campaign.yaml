@@ -1,0 +1,32 @@
+### BRAIN
+building_autonomous_research_facility:
+  categoryType: !buildingCategory category_colonies
+  colonistCapacity: 0
+  compactName: ReseFac
+  description: BE_building_autonomous_research_facility_description
+  droneCapacity: 1
+  energyStorageCapacity: 0.0
+  healthLossPerDay: 0.05
+  inputResources: {}
+  knowledge: !knowledge knowledge_autonomous_research_facility
+  maxHealth: 100.0
+  name: BE_building_autonomous_research_facility_name
+  outputQuantity: 100
+  outputResource: !resource resource_research_points
+  powerConsumption: 100.0
+  powerPriority: 2.0
+  prefabName: AutomatedResearchFacility
+  rubblePrefabName: RubblePile_M
+  progressPerDay: 0.1
+  requiredConstructionResources:
+    !resource resource_polymers: 10
+    !resource resource_electronics: 10
+    !resource resource_parts: 10
+    !resource resource_uranium: 10
+  requiredResourceVein: null
+  reservedRadius: 30.0
+  waySnapRadius: 10.0
+  iconName: BuildIcons/Icon_AutonomousResearchFacility
+  progressBarNames:
+    - Progress_Cylinder
+  categorySoundOverride: Sfx_Gameplay_BuildingBIP_Colonies_CarmineOutpost

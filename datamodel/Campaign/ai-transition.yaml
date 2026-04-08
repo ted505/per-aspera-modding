@@ -1,0 +1,53 @@
+mason:
+  validStates: [ !BT build ]
+  transitions: []
+
+commander:
+  validStates: [ !BT attack, !BT defend, !BT retreat, !BT end_wave ]
+  transitions:
+    #- forState: !BT attack
+    #  andInput: EMERGENCY
+    #  changeTo: !BT retreat
+
+    - forState: !BT attack
+      andInput: INCOMING_ATTACK
+      changeTo: !BT retreat
+
+    - forState: !BT attack
+      andInput: MILD_SUCCESS
+      changeTo: !BT retreat
+
+    - forState: !BT retreat
+      andInput: INCOMING_ATTACK
+      changeTo: !BT defend      
+
+    #- forState: !BT retreat
+    #  andInput: MILD_SUCCESS
+    #  changeTo: !BT end_wave
+
+    - forState: !BT idle
+      andInput: NEXT_WAVE
+      changeTo: !BT attack
+
+#    - forState: !BT end_wave
+#      andInput: NEXT_WAVE
+#      changeTo: !BT attack
+
+commander_aggro:
+  validStates: [ !BT attack, !BT defend, !BT retreat, !BT end_wave ]
+  transitions:
+    - forState: !BT attack
+      andInput: EMERGENCY
+      changeTo: !BT retreat
+
+#    - forState: !BT attack
+#      andInput: INCOMING_ATTACK
+#      changeTo: !BT defend
+
+#    - forState: !BT attack
+#      andInput: MILD_SUCCESS
+#      changeTo: !BT end_wave
+
+    - forState: !BT retreat
+      andInput: NEXT_WAVE
+      changeTo: !BT attack

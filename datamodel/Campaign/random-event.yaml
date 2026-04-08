@@ -1,0 +1,154 @@
+### Safe Area hazards (will not affect player)
+random_event_dust_devils_safe_zone:
+  eventsPerYear: 10
+  criteria: 
+    - '$trigger_first_sandstorm == false'
+  actions:
+    - { command: CreateDevilHazard, arguments: [hazard_devil_medium_safe] }
+random_event_asteroids_small_safe_zone:
+  eventsPerYear: 50
+  criteria: 
+    - '$trigger_first_meteorite_shower == false'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_small_safe] }
+random_event_asteroids_medium_safe_zone:
+  eventsPerYear: 5
+  criteria: 
+    - '$trigger_first_meteorite_shower == false'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_medium_safe] }
+random_event_asteroids_large_safe_zone:
+  eventsPerYear: 0.5
+  criteria: 
+    - '$trigger_first_meteorite_shower == false'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_large_safe] }
+random_event_sandstorm_winter_safe_zone:
+  eventsPerYear: 1
+  criteria: 
+    - '$is_southern_summer #= 0'	
+    - '$trigger_first_sandstorm == false'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_medium_safe] }
+random_event_sandstorm_winter_2_safe_zone:
+  eventsPerYear: 1
+  criteria: 
+    - '$is_southern_summer #= 0'	
+    - '$trigger_first_sandstorm == false'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_small_safe] }
+random_event_sandstorm_summer_safe_zone:
+  eventsPerYear: 2
+  criteria: 
+    - '$is_southern_summer #= 1'
+    - '$trigger_first_sandstorm == false'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_large_safe] }
+random_event_sandstorm_summer_2_safe_zone:
+  eventsPerYear: 3
+  criteria: 
+    - '$is_southern_summer #= 1'
+    - '$trigger_first_sandstorm == false'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_medium_safe] }
+### First Sandstorm
+random_event_first_sandstorm:
+  eventsPerYear: 1
+  criteria: 
+    - '$quest_completed.quest_maintenance #= 1'
+    - '$trigger_first_sandstorm == false'
+    - '$days >= 668'
+  actions:
+    - { command: SetBlackboardBool, arguments: [PlayerFaction, trigger_first_sandstorm, true] }
+### First Meteorite Shower
+random_event_meteorite_shower_asteroids_small:
+  eventsPerYear: 1200
+  criteria: 
+    - '$trigger_first_meteorite_shower == true'
+    - '$finish_first_meteorite_shower == false'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_small] }
+random_event_meteorite_shower_asteroids_medium:
+  eventsPerYear: 120
+  criteria: 
+    - '$trigger_first_meteorite_shower == true'
+    - '$finish_first_meteorite_shower == false'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_medium] }
+random_event_meteorite_shower_asteroids_large:
+  eventsPerYear: 12
+  criteria: 
+    - '$trigger_first_meteorite_shower == true'
+    - '$finish_first_meteorite_shower == false'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_large] }
+### After tutorial safe zone is lifted
+random_event_sandstorm_winter:
+  eventsPerYear: 1
+  criteria: 
+    - '$is_southern_summer #= 0'	
+    - '$completed_terraforming_stage_2 == false'
+    - '$trigger_first_sandstorm == true'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_medium] }
+random_event_sandstorm_winter_2:
+  eventsPerYear: 1
+  criteria: 
+    - '$is_southern_summer #= 0'	
+    - '$completed_terraforming_stage_2 == false'
+    - '$trigger_first_sandstorm == true'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_small] }
+random_event_sandstorm_summer:
+  eventsPerYear: 2
+  criteria: 
+    - '$is_southern_summer #= 1'
+    - '$completed_terraforming_stage_2 == false'
+    - '$trigger_first_sandstorm == true'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_large] }
+random_event_sandstorm_summer_2:
+  eventsPerYear: 3
+  criteria: 
+    - '$is_southern_summer #= 1'
+    - '$completed_terraforming_stage_2 == false'
+    - '$trigger_first_sandstorm == true'
+  actions:
+    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_medium] }
+#random_event_sandstorm_global:
+#  eventsPerYear: 0.1
+#  criteria: 
+#    - '$is_southern_summer #= 1'
+#    - '$completed_terraforming_stage_2 == false'
+#    - '$trigger_first_sandstorm == true'
+#  actions:
+#    - { command: CreateSandstormHazard, arguments: [hazard_sandstorm_global] }
+random_event_dust_devils:
+  eventsPerYear: 10
+  criteria: 
+    - '$completed_terraforming_stage_2 == false'
+    - '$trigger_first_sandstorm == true'
+  actions:
+    - { command: CreateDevilHazard, arguments: [hazard_devil_medium] }
+### STANDARD METEORITES
+random_event_asteroids_small:
+  eventsPerYear: 25
+  criteria: 
+    - '$completed_terraforming_stage_2 == false'
+    - '$finish_first_meteorite_shower == true'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_small] }
+random_event_asteroids_medium:
+  eventsPerYear: 2.5
+  criteria: 
+    - '$completed_terraforming_stage_2 == false'
+    - '$finish_first_meteorite_shower == true'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_medium] }
+random_event_asteroids_large:
+  eventsPerYear: 0.25
+  criteria: 
+    - '$completed_terraforming_stage_2 == false'
+    - '$finish_first_meteorite_shower == true'
+  actions:
+    - { command: CreateAsteroidHazard, arguments: [hazard_asteroid_large] }

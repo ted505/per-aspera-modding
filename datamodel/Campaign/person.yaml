@@ -1,0 +1,158 @@
+person_ami:
+  name: BE_person_ami_name
+  dialoguePrefabName: PNL_InstrospectionDialogue
+  dialogueTimeout: 1
+  dialogueForceMandatory: true
+  prefabName: AMI
+  color: FFFFFF
+  spriteName: PIC_AMI
+  isReflection: true
+  criterions:
+    - '$killswitch_carmine == false'
+    - '$killswitch_isa == false'
+person_ami_other:
+  name: BE_person_ami_name
+  dialoguePrefabName: PNL_InstrospectionDialogue
+  dialogueTimeout: 1
+  dialogueForceMandatory: true
+  prefabName: AMI
+  color: FFFFFF
+  spriteName: PIC_AMI
+  isReflection: true
+  criterions:
+    - '$killswitch_carmine == false'
+person_carmine:
+  name: BE_person_carmine_name
+  dialoguePrefabName: PNL_InstrospectionDialogue_Carmine
+  dialogueTimeout: 1
+  dialogueForceMandatory: true
+  prefabName: Carmine
+  color: FFFFFF 
+  spriteName: PIC_MarsColony
+  location: BE_person_location_unknown_Mars
+  criterions:
+    - '$killswitch_carmine == true'
+person_houston_nathan:
+  name: BE_person_houston_nathan_shortName
+  dialogueTimeout: 30
+  prefabName: Nathan
+  color: FFFFFF
+  spriteName: PIC_Nathan
+  location: BE_person_location_houston
+  criterions: 
+    - '$carlos_replaces_nathan == false'
+person_houston_calvin:
+  name: BE_person_houston_calvin_shortName
+  dialogueTimeout: 30
+  prefabName: Calvin
+  color: FFFFFF
+  spriteName: PIC_Calvin
+  location: BE_person_location_houston
+person_houston_carlos:
+  name: BE_person_houston_carlos_shortName
+  dialogueTimeout: 30
+  prefabName: Carlos
+  color: FFFFFF
+  spriteName: PIC_Calderon
+  location: BE_person_location_houston
+  criterions: 
+    - '$carlos_replaces_nathan == true'
+person_veyron:
+  name: BE_person_veyron_name
+  dialoguePrefabName: PNL_HackingDialogue
+  dialogueTimeout: 1
+  dialogueForceMandatory: true
+  prefabName: Veyron
+  color: FFFFFF
+  spriteName: PIC_Hacking
+  location: BE_person_location_unknown_Mars
+person_elya:
+  name: BE_person_elya_shortName
+  dialogueTimeout: 30
+  prefabName: Elya
+  color: FFFFFF
+  spriteName: PIC_Elya
+  location: BE_person_location_martian_colonies
+  criterions: 
+    - '$sonna_replaces_elya == false'
+person_sonna:
+  name: BE_person_sonna_shortName
+  dialogueTimeout: 30
+  prefabName: Sonna
+  color: FFFFFF
+  spriteName: PIC_Sonna
+  location: BE_person_location_martian_colonies
+  criterions: 
+    - '$sonna_replaces_elya == true'
+person_nian:
+  name: BE_person_nian_shortName
+  dialogueTimeout: 1
+  dialogueForceMandatory: true
+  prefabName: Nian
+  color: FFFFFF
+  spriteName: PIC_Zheng
+  location: BE_person_location_beijing
+person_tekkies_hack:
+  name: BE_person_tekkies_hack_shortName
+  dialoguePrefabName: PNL_HackingDialogue
+  dialogueTimeout: 1
+  dialogueForceMandatory: true
+  prefabName: TekkiesHack
+  color: FFFFFF
+  spriteName: PIC_Hacking
+  location: BE_person_location_unknown
+person_ecologists_hack:
+  name: BE_person_ecologists_hack_name
+  dialoguePrefabName: PNL_HackingDialogue
+  dialogueTimeout: 1
+  dialogueForceMandatory: true
+  prefabName: EcologistsHack
+  color: FFFFFF
+  spriteName: PIC_Hacking
+  location: BE_person_location_unknown
+person_killswitch:
+  name: BE_person_killswitch_name
+  dialoguePrefabName: PNL_KillSwitch
+  dialogueTimeout: 1
+  dialogueForceMandatory: true
+  prefabName: Killswitch
+  color: FFFFFF
+  spriteName: PIC_Killswitch
+  location: BE_person_location_MOS
+person_houston_cognitive_test:
+  name: BE_person_houston_cognitive_test_shortName
+  dialoguePrefabName: PNL_CognitiveTest
+  dialogueTimeout: 1
+  dialogueForceMandatory: true
+  prefabName: CognitiveTest
+  color: FFFFFF
+  spriteName: PIC_CognitiveTest
+  location: BE_person_location_MOS
+person_shelle:
+  name: BE_person_shelle_shortName
+  dialogueTimeout: 30
+  prefabName: AMI
+  color: FFFFFF
+  spriteName: PIC_Shelle
+  criterions:
+    - '$killswitch_carmine == true'
+person_carmine_other:
+  name: BE_person_carmine_name
+  dialogueTimeout: 30
+  prefabName: Carmine
+  color: FFFFFF 
+  spriteName: PIC_MarsColony
+  location: BE_person_location_enemy_base
+  criterions:
+    - '$killswitch_isa == true'
+person_nathan_hack: ### After Carlos replaces Nathan, Nathan sends a prerecorded message
+  name: BE_person_houston_nathan_shortName
+  dialogueTimeout: 1
+  dialoguePrefabName: PNL_HackingDialogue
+  dialogueForceMandatory: true
+  prefabName: Nathan
+  color: FFFFFF
+  spriteName: PIC_Hacking
+  location: BE_person_location_unknown_Earth
+  criterions: 
+    - '$carlos_replaces_nathan == true'

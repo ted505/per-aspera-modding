@@ -1,0 +1,7 @@
+special_site_abandoned_colony:
+  discoveryType: DISCOVERABLE
+special_site_abandoned_radar_station:
+  discoveryType: DISCOVERABLE
+### ASTERION MISSION - SECTOR 6
+special_site_colonie_asterion:
+  discoveryType: ALWAYS_KNOWN

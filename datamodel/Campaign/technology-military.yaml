@@ -1,0 +1,465 @@
+## MILITARY 0
+technology_lane_military_0:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_limit_0
+      command: UnlockEnhancement
+  isLane: true
+  name: BE_technology_lane_military_0_name 
+  shortName: BE_technology_lane_military_0_shortName
+  iconName: Techtree Icons/ICO_TT_Military_Lane
+  categoryIconName: Techtree Icons/Icon_TechTree_Military
+  categoryName: BE_technology_lane_military_categoryName
+  description: BE_technology_lane_military_0_description
+  popupImageName: Popups/Images/IMG_PU_Military_Lane
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 0.0
+  requirements: []
+  unlockAutomatically: false
+  laneColor: 47322F
+  connections: {}
+  isPlaceholder: false
+#  position:
+#    x: 0.0903165489
+#    y: 0.0
+technology_defense_drone_hive:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - defense_drone_hive
+      command: UnlockBuilding
+      daysDelay: 0.0
+  isLane: false
+  name: BE_technology_defense_drone_hive_name
+  description: BE_technology_defense_drone_hive_description
+  iconName: Techtree Icons/ICO_TT_DroneHive
+  popupImageName: Popups/Images/IMG_PU_Military_DefenseDroneHive
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 150.0
+  requirements:
+    - !technology technology_lane_military_0
+  connections:
+    technology_defense_drone_hive_2: []
+  isPlaceholder: false
+  position: 9
+#  position:
+#    x: 0.0903165489
+#    y: 0.72
+technology_assault_drone_factory:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - building_military_drone_factory
+      command: UnlockBuilding
+      daysDelay: 0.0
+  isLane: false
+  name: BE_technology_assault_drone_factory_name
+  description: BE_technology_assault_drone_factory_description
+  iconName: Techtree Icons/ICO_TT_AssaultDroneFactory
+  popupImageName: Popups/Images/IMG_PU_Military_AssaultDroneFactory
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 150.0
+  requirements:
+    - !technology technology_lane_military_0
+  connections:
+    technology_assault_drone_factory_2: []
+  isPlaceholder: false
+  position: 7
+#  position:
+#    x: 0.0903165489
+#    y: 0.52
+## MILITARY 1
+technology_lane_military_1:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_limit_1
+      command: UnlockEnhancement
+  isLane: true
+  name: BE_technology_lane_military_1_name
+  shortName: BE_technology_lane_military_1_shortName
+  description: BE_technology_lane_military_1_description
+  iconName: Techtree Icons/ICO_TT_Military_Lane
+  popupImageName: Popups/Images/IMG_PU_Military_Lane
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 150.0
+  requirements:
+    - !technology technology_lane_military_0
+  connections: {}
+  isPlaceholder: false
+#  position:
+#    x: 0.254189938
+#    y: 0.0
+technology_assault_drone_shield:
+  actions: []
+  isLane: false
+  name: BE_technology_assault_drone_shield_name
+  description: BE_technology_assault_drone_shield_description
+  iconName: Techtree Icons/ICO_TT_AssaultDroneShield
+  popupImageName: Popups/Images/IMG_PU_Military_AssaultDroneShield
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 750.0
+  requirements:
+    - !technology technology_lane_military_1
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_shield
+      command: UnlockEnhancement
+      daysDelay: 0.0    
+  connections:
+    technology_assault_drone_shield_2: []
+  isPlaceholder: false
+  position: 11
+#  position:
+#    x: 0.254602253
+#    y: 0.90
+## MILITARY 2
+technology_lane_military_2:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_limit_2
+      command: UnlockEnhancement
+  isLane: true
+  name: BE_technology_lane_military_2_name
+  shortName: BE_technology_lane_military_2_shortName
+  description: BE_technology_lane_military_2_description
+  iconName: Techtree Icons/ICO_TT_Military_Lane
+  popupImageName: Popups/Images/IMG_PU_Military_Lane
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 750.0
+  requirements:
+    - !technology technology_lane_military_1
+  connections: {}
+  isPlaceholder: false
+#  position:
+#    x: 0.418063313
+#    y: 0.0
+technology_defense_drone_hive_2:
+  actions: []
+  isLane: false
+  name: BE_technology_defense_drone_hive_2_name
+  description: BE_technology_defense_drone_hive_2_description
+  iconName: Techtree Icons/ICO_TT_DroneHive2
+  popupImageName: Popups/Images/IMG_PU_Military_DefenseDroneHive2
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 2500.0
+  requirements:
+    - !technology technology_lane_military_2
+    - !technology technology_defense_drone_hive
+  actions:
+    - arguments:
+        - PlayerFaction
+        - defense_drone_hive_2
+      command: UnlockBuilding
+      daysDelay: 0.0    
+  connections:
+    technology_defense_drone_hive_3: []
+  isPlaceholder: false
+  position: 9
+#  position:
+#    x: 0.418063313
+#    y: 0.72
+technology_assault_drone_weapons:
+  actions: []
+  isLane: false
+  name: BE_technology_assault_drone_weapons_name
+  description: BE_technology_assault_drone_weapons_description
+  iconName: Techtree Icons/ICO_TT_AssaultDroneWeapons
+  popupImageName: Popups/Images/IMG_PU_Military_AssaultDroneWeapons
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 2500.0
+  requirements:
+    - !technology technology_lane_military_2
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_weapons
+      command: UnlockEnhancement
+      daysDelay: 0.0
+  connections:
+    technology_assault_drone_weapons_2: []
+  isPlaceholder: false
+  position: 5
+#  position:
+#    x: 0.418192893
+#    y: 0.38
+## MILITARY 3
+technology_lane_military_3:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_limit_3
+      command: UnlockEnhancement
+  isLane: true
+  name: BE_technology_lane_military_3_name
+  shortName: BE_technology_lane_military_3_shortName
+  description: BE_technology_lane_military_3_description
+  iconName: Techtree Icons/ICO_TT_Military_Lane
+  popupImageName: Popups/Images/IMG_PU_Military_Lane
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 2500.0
+  requirements:
+    - !technology technology_lane_military_2
+  actions: []
+  connections: {}
+  isPlaceholder: false
+#  position:
+#    x: 0.581936657
+#    y: 0.0
+technology_assault_drone_shield_2:
+  actions: []
+  isLane: false
+  name: BE_technology_assault_drone_shield_2_name
+  description: BE_technology_assault_drone_shield_2_description
+  iconName: Techtree Icons/ICO_TT_AssaultDroneShield2
+  popupImageName: Popups/Images/IMG_PU_Military_AssaultDroneShield2
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 10000.0
+  requirements:
+    - !technology technology_lane_military_3
+    - !technology technology_assault_drone_shield
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_shield_2
+      command: UnlockEnhancement
+      daysDelay: 0.0   
+  connections: {}
+  isPlaceholder: false
+  position: 11
+#  position:
+#    x: 0.582349062
+#    y: 0.90
+technology_assault_drone_factory_2:
+  isLane: false
+  name: BE_technology_assault_drone_factory_2_name
+  description: BE_technology_assault_drone_factory_2_description
+  iconName: Techtree Icons/ICO_TT_AssaultDroneFactory2
+  popupImageName: Popups/Images/IMG_PU_Military_AssaultDroneFactory2
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 10000.0
+  requirements:
+    - !technology technology_lane_military_3
+    - !technology technology_assault_drone_factory
+  actions:
+    - arguments:
+        - PlayerFaction
+        - building_military_drone_factory_2
+      command: UnlockBuilding
+      daysDelay: 0.0    
+  connections:
+    technology_assault_drone_factory_2: []
+  isPlaceholder: false
+  position: 7
+#  position:
+#    x: 0.581936657
+#    y: 0.52
+technology_assault_drone_speed:
+  actions: []
+  isLane: false
+  name: BE_technology_assault_drone_speed_name
+  description: BE_technology_assault_drone_speed_description
+  iconName: Techtree Icons/ICO_TT_AssaultDroneSpeed
+  popupImageName: Popups/Images/IMG_PU_Military_AssaultDroneSpeed
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 10000.0
+  requirements:
+    - !technology technology_lane_military_3
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_speed
+      command: UnlockEnhancement
+      daysDelay: 0.0   
+  connections:
+    technology_assault_drone_speed_2: []
+  isPlaceholder: false
+  position: 3
+#  position:
+#    x: 0.582522035
+#    y: 0.21
+## MILITARY 4
+technology_lane_military_4:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_limit_4
+      command: UnlockEnhancement
+  isLane: true
+  name: BE_technology_lane_military_4_name
+  shortName: BE_technology_lane_military_4_shortName
+  description: BE_technology_lane_military_4_description
+  iconName: Techtree Icons/ICO_TT_Military_Lane
+  popupImageName: Popups/Images/IMG_PU_Military_Lane
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 10000.0
+  requirements:
+    - !technology technology_lane_military_3
+  connections: {}
+  isPlaceholder: false
+#  position:
+#    x: 0.745809972
+#    y: 0.0
+technology_assault_drone_weapons_2:
+  actions: []
+  isLane: false
+  name: BE_technology_assault_drone_weapons_2_name
+  description: BE_technology_assault_drone_weapons_2_description
+  iconName: Techtree Icons/ICO_TT_AssaultDroneWeapons2
+  popupImageName: Popups/Images/IMG_PU_Military_AssaultDroneWeapons2
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 25000.0
+  requirements:
+    - !technology technology_lane_military_4
+    - !technology technology_assault_drone_weapons
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_weapons_2
+      command: UnlockEnhancement
+      daysDelay: 0.0   
+  connections: {}
+  isPlaceholder: false
+  position: 5
+#  position:
+#    x: 0.745809972
+#    y: 0.38
+## MILITARY 5
+technology_lane_military_5:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_limit_5
+      command: UnlockEnhancement
+  isLane: true
+  name: BE_technology_lane_military_5_name
+  shortName: BE_technology_lane_military_5_shortName
+  description: BE_technology_lane_military_5_description
+  iconName: Techtree Icons/ICO_TT_Military_Lane
+  popupImageName: Popups/Images/IMG_PU_Military_Lane
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 25000.0
+  requirements:
+    - !technology technology_lane_military_4
+  connections: {}
+  isPlaceholder: false
+#  position:
+#    x: 0.909683406
+#    y: 0.0
+technology_defense_drone_hive_3:
+  isLane: false
+  name: BE_technology_defense_drone_hive_3_name
+  description: BE_technology_defense_drone_hive_3_description
+  iconName: Techtree Icons/ICO_TT_DroneHive3
+  popupImageName: Popups/Images/IMG_PU_Military_DefenseDroneHive3
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 50000.0
+  requirements:
+    - !technology technology_lane_military_5
+    - !technology technology_defense_drone_hive_2    
+  actions:
+    - arguments:
+        - PlayerFaction
+        - defense_drone_hive_3
+      command: UnlockBuilding
+      daysDelay: 0.0    
+  connections: {}
+  isPlaceholder: false
+  position: 9
+#  position:
+#    x: 0.908892274
+#    y: 0.72
+technology_assault_drone_factory_3:
+  isLane: false
+  name: BE_technology_assault_drone_factory_3_name
+  description: BE_technology_assault_drone_factory_3_description
+  iconName: Techtree Icons/ICO_TT_AssaultDroneFactory3
+  popupImageName: Popups/Images/IMG_PU_Military_AssaultDroneFactory3
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 50000.0
+  requirements:
+    - !technology technology_lane_military_5
+    - !technology technology_assault_drone_factory_2
+  actions:
+    - arguments:
+        - PlayerFaction
+        - building_military_drone_factory_3
+      command: UnlockBuilding
+      daysDelay: 0.0  
+  connections: {}
+  isPlaceholder: false
+  position: 7
+#  position:
+#    x: 0.910645187
+#    y: 0.52
+technology_assault_drone_speed_2:
+  actions: []
+  isLane: false
+  name: BE_technology_assault_drone_speed_2_name
+  description: BE_technology_assault_drone_speed_2_description
+  iconName: Techtree Icons/ICO_TT_AssaultDroneSpeed2
+  popupImageName: Popups/Images/IMG_PU_Military_AssaultDroneSpeed2
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 50000.0
+  requirements:
+    - !technology technology_lane_military_5
+    - !technology technology_assault_drone_speed
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_speed_2
+      command: UnlockEnhancement
+      daysDelay: 0.0
+  connections: {}
+  isPlaceholder: false
+  position: 3
+#  position:
+#    x: 0.911056876
+#    y: 0.21
+## MILITARY 6
+technology_lane_military_6:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_assault_drone_limit_6
+      command: UnlockEnhancement
+  isLane: true
+  name: BE_technology_lane_military_6_name 
+  shortName: BE_technology_lane_military_6_shortName
+  iconName: Techtree Icons/ICO_TT_Military_Lane
+  categoryIconName: Techtree Icons/Icon_TechTree_Military
+  description: BE_technology_lane_military_6_description
+  popupImageName: Popups/Images/IMG_PU_Military_Lane
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_BG
+  requiredResearchPoints: 50000.0
+  requirements:  
+   - !technology technology_lane_military_5
+  laneColor: 47322F
+  connections: {}
+  isPlaceholder: false
+#  position:
+#    x: 1.073556721
+#    y: 0.0
+technology_continuing_military:
+  actions: []
+  isLane: false
+  name: BE_technology_continuing_military_name
+  description: BE_technology_continuing_military_description
+  iconName: Techtree Icons/ICO_TT_Continuous_Military
+  popupImageName: Popups/Images/IMG_PU_Continuous_Military
+  popupSecondaryImageName: Popups/Images/IMG_PU_Category_Military_Continuous
+  requiredResearchPoints: 100000.0
+  requirements:
+    - !technology technology_lane_military_6
+  actions:
+    - arguments:
+        - PlayerFaction
+        - enhancement_increment_drone_power
+      command: UnlockEnhancement
+  connections: {}
+  isPlaceholder: false
+  repeatable : true
+  position: 7

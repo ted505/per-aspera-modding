@@ -1,0 +1,62 @@
+### CAMPAIGN MANIFEST
+modId: Campaign
+building:
+  filenames:
+    - building-campaign.yaml
+    - building-military.yaml
+  replace: false
+technology:
+  filenames:
+    - technology-military.yaml
+buildingCategory:
+  filenames:
+    - buildingCategory.yaml
+  replace: false
+person:
+  filenames:
+    - person.yaml
+  replace: true
+site:
+  filenames:
+    - site.yaml
+  replace: false
+knowledge:
+  filenames:
+    - knowledge.yaml
+  replace: false
+project:
+  filenames:
+    - project.yaml
+  replace: false
+quest:
+  filenames:
+    - quest.yaml
+  replace: false
+rule:
+  filenames:
+    - rule-patch.yaml
+  replace: true
+aiplayer:
+  filenames:
+    - ai-player.yaml
+  replace: true
+behavior:
+  filenames:
+    - ai-behavior-tree.yaml
+  replace: true
+perspective:
+  filenames:
+    - ai-perspective.yaml
+  replace: true
+transition:
+  filenames:
+    - ai-transition.yaml
+  replace: true
+randomEvent:
+  filenames:
+    - random-event.yaml
+  replace: false
+popup:
+  filenames:
+    - popup.yaml
+  replace: false

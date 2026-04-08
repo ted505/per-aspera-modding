@@ -1,0 +1,48 @@
+knowledge_military_drone_factory:
+  content: BE_knowledge_structures_military_drone_factory_content
+  contentBuilding: !building building_military_drone_factory
+  image: null
+  iconName: BuildIcons/Icon_AssaultDroneFactory_1
+  path: Structures/Military/Assault Drone Factory
+  localizedPath: BE_knowledge_structures/BE_knowledge_structures_military/BE_knowledge_structures_military_drone_factory_title
+  title: BE_knowledge_structures_military_drone_factory_title
+knowledge_drone_hive:
+  content: BE_knowledge_structures_drone_hive_content
+  contentBuilding: !building defense_drone_hive
+  image: null
+  iconName: BuildIcons/Icon_DroneHive_1
+  path: Structures/Military/Drone Hive
+  localizedPath: BE_knowledge_structures/BE_knowledge_structures_military/BE_knowledge_structures_drone_hive_title
+  title: BE_knowledge_structures_drone_hive_title
+knowledge_autonomous_research_facility:
+  content: BE_knowledge_structures_autonomous_research_facility_content
+  contentBuilding: !building building_autonomous_research_facility
+  image: null
+  iconName: BuildIcons/Icon_AutonomousResearchFacility
+  path: Structures/Special/Autonomous Research Facility
+  localizedPath: BE_knowledge_structures/BE_knowledge_structures_carmine/BE_knowledge_structures_autonomous_research_facility_title
+  title: BE_knowledge_structures_autonomous_research_facility_title
+knowledge_project_seedship_fleet:
+  content: BE_knowledge_special_projects_seedship_fleet_content
+  image: null
+  iconName: KnowledgeBase/ICO_KB_SeedShips
+  path: Special Projects/My Project/Seedship Fleet
+  localizedPath: BE_knowledge_special_projects/BE_knowledge_special_projects_Carmine/BE_knowledge_special_projects_seedship_fleet_name
+  title: BE_knowledge_special_projects_seedship_fleet_title
+  contentProject: !project project_seedship_fleet
+knowledge_project_martian_defense_network:
+  content: BE_knowledge_special_projects_martian_defense_network_content
+  image: null
+  iconName: KnowledgeBase/ICO_KB_MartianDefenseNetwork
+  path: Special Projects/Defense Network/Martian Defense Network
+  localizedPath: BE_knowledge_special_projects/BE_knowledge_special_projects_Martian_Republic/BE_knowledge_special_projects_martian_defense_network_name
+  title: BE_knowledge_special_projects_martian_defense_network_title
+  contentProject: !project project_martian_defense_network
+knowledge_project_repair_communications_satellite:
+  content: BE_knowledge_special_projects_repair_communications_satellite_content
+  image: null
+  iconName: KnowledgeBase/ICO_KB_SatelliteRepair
+  path: Special Projects/Single Launches/Satellite Repair
+  localizedPath: BE_knowledge_special_projects/BE_knowledge_special_projects_Launches_Single/BE_knowledge_special_projects_repair_communications_satellite_name
+  title: BE_knowledge_special_projects_repair_communications_satellite_title
+  contentProject: !project project_repair_communications_satellite

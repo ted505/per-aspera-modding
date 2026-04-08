@@ -1,0 +1,44 @@
+
+# NOTE: First interpretation has highest match priority, then descends.
+disabled:
+  interpretation: []
+
+baseline:
+  interpretation:
+    # If no more attacking, not actually a MILD_SUCCESS but "retreat" state is wanted. TODO: add more detailed inputs...
+    - criterions:
+      - $attacking == true
+      - "$attacking_swarm_count #= 0"
+      input: MILD_SUCCESS
+
+    #- criterions:
+    #  - $buildings_emergency_count >= 2
+    #  input: EMERGENCY
+
+    - criterions:
+      - $attacking == false
+      - $intruder_count > 0
+      input: INCOMING_ATTACK  
+
+    - criterions:
+      - $attacking == true
+      - $military_incoming_attack_power > 1.0       # This is the defensive to intruder ratio. See HIVES_AS_MILITARY_POWER in code.
+      - $intruder_days > 5                          # Days passed with intruders before calling back as a histeresis
+      input: INCOMING_ATTACK     
+
+    - criterions: 
+      - $wave_remaining_damage <= 0
+      input: MILD_SUCCESS
+
+    - criterions:
+      # - $base_visible == true
+      #TODO: only dispatch if idle
+      - $attack_ready == true
+      - $military_cooldown <= 0
+      input: NEXT_WAVE
+
+#commander:
+#  # TODO? --> inherit: !Perspective baseline
+#  interpretation:
+#    - criterions: [ '$military_time >= 50', '$military_wave >= 2' ]
+#      input: WAVE_ATTACK

@@ -1,0 +1,88 @@
+clearAreaRadius: 50
+manualStartingLocation: true
+initializeAdditionalResourceVeins: true
+resources:
+  !resource resource_aluminum: 15
+  !resource resource_steel: 30
+  !resource resource_electronics: 5
+### NITRAM FIX THIS: NO WAY TO REPLACE 
+universeFalseBooleans:
+  - ship_arrived
+  - completed_terraforming
+  - completed_nuclear_silo
+  - used_polar_nukes
+  - consequences_aerobrake_research_started
+  - used_aerobraking
+  - unlocked_military_technology
+  - has_military_technology
+  - first_enemy_base_spawned
+  - first_battle_won
+  - launch_satellite_researched
+  - completed_radar_station
+  - elya_suspicious_about_nian
+  - permission_granted_biomedical_facility_area
+  - second_enemy_base_spawned
+  - second_battle_won
+  - killswitch_isa
+  - killswitch_carmine
+  - killswitch_colonies
+  - third_enemy_base_spawned
+  - third_battle_won
+  - completed_terraforming_stage_2
+  - trigger_first_meteorite_shower
+  - finish_first_meteorite_shower
+  - trigger_first_sandstorm
+universeBlackboardZeroNumbers:
+  - days
+unlockedSpecialProjects:
+  - !project project_colonist_migration
+  - !project project_launch_satellite_1
+  - !project project_launch_satellite_2
+  - !project project_launch_satellite_3
+  - !project project_launch_satellite_4
+  - !project project_launch_satellite_5
+  - !project project_launch_satellite_6
+  - !project project_launch_satellite_7
+  - !project project_launch_satellite_8
+  - !project project_launch_satellite_9
+  - !project project_launch_satellite_10
+  - !project project_launch_satellite_11
+  - !project project_launch_satellite_12
+unlockedKnowledge:
+  - !knowledge knowledge_terraforming_plan_stage_1
+  - !knowledge knowledge_terraforming_plan_stage_2
+  - !knowledge knowledge_terraforming_plan_stage_3
+  - !knowledge knowledge_terraforming_plan_stage_4
+  - !knowledge knowledge_terraforming_plan_stage_5
+  - !knowledge knowledge_colonists
+  - !knowledge knowledge_maintenance_drones
+  - !knowledge knowledge_worker_drones
+  - !knowledge knowledge_maintenance
+  - !knowledge knowledge_power_grid
+  - !knowledge knowledge_prioritization
+  - !knowledge knowledge_resources
+  - !knowledge knowledge_ruins_and_research_outposts
+  - !knowledge knowledge_sectors_and_expansions
+  - !knowledge knowledge_special_projects
+unlockedBuildings:
+  - !building building_drone_base
+  - !building building_aluminum_mine
+  - !building building_silicon_mine
+  - !building building_iron_mine
+  - !building building_carbon_mine
+  - !building building_research_lab
+  - !building building_colony_basic
+  - !building building_water_mine
+  - !building building_chemicals_mine
+  - !building building_electronics_factory
+  - !building building_steel_factory
+  - !building building_glass_factory
+  - !building building_food_factory
+  - !building building_parts_factory
+  - !building building_polymers_factory
+  - !building building_drone_factory
+  - !building building_maintenance_facility
+
+  - !building building_areological_scanner
+  - !building building_spaceport
+  - !building power_solar_panel_field

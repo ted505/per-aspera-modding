@@ -1,0 +1,193 @@
+#LAUNCH SATELLITE PROJECTS
+project_launch_satellite_1:
+  criterions:
+    - '$SECTOR_PERMISSION_1 == true'
+
+project_launch_satellite_2:
+  criterions:
+    - '$SECTOR_PERMISSION_2 == true'
+
+project_launch_satellite_3:
+  criterions:
+    - '$SECTOR_PERMISSION_3 == true'
+
+project_launch_satellite_4:
+  criterions:
+    - '$SECTOR_PERMISSION_4 == true'
+                
+project_launch_satellite_5:
+  criterions:
+    - '$SECTOR_PERMISSION_5 == true'
+
+project_launch_satellite_6:
+  criterions:
+    - '$SECTOR_PERMISSION_6 == true'
+
+project_launch_satellite_7:
+  criterions:
+    - '$SECTOR_PERMISSION_7 == true'
+
+project_launch_satellite_8:
+  criterions:
+    - '$SECTOR_PERMISSION_8 == true'
+
+project_launch_satellite_9:
+  criterions:
+    - '$SECTOR_PERMISSION_9 == true'
+
+project_launch_satellite_10:
+  criterions:
+    - '$SECTOR_PERMISSION_10 == true'
+
+project_launch_satellite_11:
+  criterions:
+    - '$SECTOR_PERMISSION_11 == true'
+
+project_launch_satellite_12:
+  criterions:
+    - '$SECTOR_PERMISSION_12 == true'
+        
+### STORY-RELATED ###
+project_repair_communications_satellite:
+  description: BE_project_repair_communications_satellite_description
+  expirationCriterions:
+    - '$commsat_repaired == true'
+  iconName: KnowledgeBase/ICO_KB_SatelliteRepair
+  defaultVisible: false
+  hideWhenExpired: true
+  index: 29
+  launchType: Single
+  name: BE_project_repair_communications_satellite_name
+  requiredLaunches: 1
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_parts: 5
+      !resource resource_electronics: 5
+      !resource resource_polymers: 5
+  launchActions:
+    - command: SetBlackboardBool
+      arguments:    
+        - PlayerFaction
+        - commsat_repaired
+        - true
+  specialProjectController:
+    !SpecialProjectControllerBase
+    spaceportCardPrefab: "SpaceportProjects/SpecialProject"
+    spaceportCardPrefabPerBuilding:
+      building_space_elevator: "SpaceElevatorProjects/SpecialProjectShipOut_Elevator"
+    specialProjectCardPrefab: card2
+    spaceportStages:
+      - key: BE_project_spaceportStages_resources_gather
+        buildingAnimatorTriggerEnter: "Gathering"
+        specialCriteria: ResourcesMet
+        cancellable: true
+        monthsDuration: 0
+        onEnter: []
+      - key: BE_project_spaceportStages_satellite_build
+        buildingAnimatorTriggerEnter: "Building"
+        buildAnimation: true
+        cancellable: true
+        monthsDuration: 2
+        onEnter: []
+      - key: BE_project_spaceportStages_satellite_repair
+        buildingAnimatorTriggerEnter: "TransitLaunch"
+        animatorTriggerEnter: "ShipOut"
+        cancellable: true
+        monthsDuration: 1
+        onEnter: []
+        
+project_seedship_fleet:
+  description: BE_project_seedship_fleet_description
+  criterions: []
+  iconName: KnowledgeBase/ICO_KB_SeedShips
+  defaultVisible: true
+  index: 27
+  launchType: Multiple
+  name: BE_project_seedship_fleet_name
+  requiredLaunches: 12
+  requiredBuilding: !building building_space_elevator
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_iron: 100
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 10
+  launchActions: []
+  sfxSpecialMoment: Sfx_Gameplay_SpecialProjectsAnimations_SeedshipFleet
+  specialProjectController:
+    !SpecialProjectControllerBase
+    spaceportCardPrefab: "SpaceportProjects/SpecialProject"
+    spaceportCardPrefabPerBuilding:
+      building_space_elevator: "SpaceElevatorProjects/SpecialProjectShipOut_Elevator"
+    specialProjectCardPrefab: card2
+    spaceportStages:
+      - key: BE_project_spaceportStages_resources_gather
+        buildingAnimatorTriggerEnter: "Gathering"
+        specialCriteria: ResourcesMet
+        cancellable: true
+        monthsDuration: 0
+        onEnter: []
+      - key: BE_project_spaceportStages_seedship_module_build
+        buildingAnimatorTriggerEnter: "Building"
+        buildAnimation: true
+        cancellable: true
+        monthsDuration: 2
+        onEnter: []
+      - key: BE_project_spaceportStages_seedship_module_launch
+        buildingAnimatorTriggerEnter: "TransitLaunch"
+        animatorTriggerEnter: "ShipOut"
+        focusPosition: Proxy
+        focusOnExitStage: True
+        focusCondition: LastLaunch
+        cancellable: true
+        monthsDuration: 1
+        onEnter: []
+  
+project_martian_defense_network:
+  description: BE_project_martian_defense_network_description
+  criterions: []
+  iconName: KnowledgeBase/ICO_KB_MartianDefenseNetwork
+  defaultVisible: true
+  index: 28
+  launchType: Multiple
+  name: BE_project_martian_defense_network_name
+  requiredLaunches: 12
+  requiredBuilding: !building building_space_elevator
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_iron: 100
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 10
+  launchActions: []
+  sfxSpecialMoment: Sfx_Gameplay_SpecialProjectsAnimations_MartianDefenseNetwork
+  specialProjectController:
+    !SpecialProjectControllerBase
+    spaceportCardPrefab: "SpaceportProjects/SpecialProject"
+    spaceportCardPrefabPerBuilding:
+      building_space_elevator: "SpaceElevatorProjects/SpecialProjectShipOut_Elevator"
+    specialProjectCardPrefab: card2
+    spaceportStages:
+      - key: BE_project_spaceportStages_resources_gather
+        buildingAnimatorTriggerEnter: "Gathering"
+        specialCriteria: ResourcesMet
+        cancellable: true
+        monthsDuration: 0
+        onEnter: []
+      - key: BE_project_spaceportStages_defense_satellite_build
+        buildingAnimatorTriggerEnter: "Building"
+        buildAnimation: true
+        cancellable: true
+        monthsDuration: 2
+        onEnter: []
+      - key: BE_project_spaceportStages_defense_satellite_launch
+        buildingAnimatorTriggerEnter: "TransitLaunch"
+        animatorTriggerEnter: "ShipOut"
+        focusPosition: Proxy
+        focusOnExitStage: True
+        focusCondition: LastLaunch
+        cancellable: true
+        monthsDuration: 1
+        onEnter: []

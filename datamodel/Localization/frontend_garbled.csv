@@ -1,0 +1,61 @@
+Context,ID,Text,Comments
+
+
+Backend,"BE_CargoQuantity[1]","{0:0.#}",
+
+
+Backend,BE_resource_aluminum,"Àlùmínùm",
+Backend,BE_resource_carbon,"Càrbón",
+Backend,BE_resource_chemicals,"Ch3mícä1s",
+Backend,BE_resource_crater,"Häbí7àbl3 Crà7er",
+Backend,BE_resource_drone,"Wòrker Drón3",
+Backend,BE_resource_electronics,"Elec7rònìc5",
+Backend,BE_resource_food,"Fööd",
+Backend,BE_resource_ghg_release,"GHG R3l3áse",
+Backend,BE_resource_glass,"Glàs5",
+Backend,BE_resource_heat,"Heà7",
+Backend,BE_resource_iron,"Ìrón",
+Backend,BE_resource_military_drone,"Á55áù17 Dróne",
+Backend,BE_resource_nitrogen_release,"Nìsróg3n R3leás3",
+Backend,BE_resource_carbon_dioxide_release,"CÖ2 R3leä5e",
+Backend,BE_resource_oxygen_release,"Öxyg3n Re13ä53",
+Backend,BE_resource_parts,"Párs5",
+Backend,BE_resource_silicon,"Sïlìcón",
+Backend,BE_resource_special_site,"5pecìàl 5ï73",
+Backend,BE_resource_steel,"S73e1",
+Backend,BE_resource_water,"Wàser",
+
+
+
+
+
+Backend,BE_Building_NOT_activated,"<cö1ör=red>D3ÁC7ÏVÁ7ED!</có1ör>",
+Backend,BE_Building_NOT_powered,"<cö1ór=r3d>ÒÚS ÖF PÒWER!</cò1ór>",
+Backend,BE_Building_health[1],"Health: {0:P0}",
+Backend,BE_Building_HomeDockedDrone[1],"Home-docked drone: {0}",
+Backend,"BE_Building_AssignedDrone_SINGULAR[1]","Assigned drone: {0}",
+Backend,"BE_Building_AssignedDrone_PLURAL[1]","Assigned drones:\n\7Dróne5 {0}",
+Backend,"BE_Building_WorkState_AwaitingConstructionMaterials","Awaiting construction materials:",
+Backend,"BE_Building_WorkState_MaterialsLine[3]","	{0} {1}/{2}",
+Backend,"BE_Building_WorkState_ConstructionProgress[1]","Construction progress: {0:P0}",
+Backend,"BE_Building_WorkState_AwaitingUpgradeMaterials","Awaiting upgrade materials:",
+Backend,"BE_Building_WorkState_UpgradeProgress[1]","Upgrade progress: {0:P0}",
+Backend,"BE_Building_WorkState_ScrapProgress[1]","Scrap progress: {0:P0}",
+Backend,"BE_Building_WorkState_AwaitingRubbleClearOut","Àwäïsíng rúbb13 cleár óüs",
+
+
+
+Frontend,TXT_BuildPanel_Basic,BÀSÍC,
+Frontend,TXT_BuildPanel_Mines,MÏN3S,
+Frontend,TXT_BuildPanel_Factories,FÀC7ÓRÍ3S,
+Frontend,TXT_BuildPanel_Power,PÓW3R,
+Frontend,TXT_BuildPanel_Colonies,CÓ1ÓNÏ35,
+Frontend,TXT_BuildPanel_Terraforming,7ERRÁFÓRMÏNG,
+Frontend,TXT_BuildPanel_Military,MÍLÏSÀRY,
+Frontend,TXT_MainMenu_Buttons_New_campaign,N3w Càmpáìgn,
+Frontend,TXT_MainMenu_Buttons_New_campaign_debug_no_intro,New Càmpàígn - D3bùg Nò Ín7rò,
+Frontend,TXT_MainMenu_Buttons_Continue,Cón7ìnú3,
+Frontend,TXT_MainMenu_Buttons_Load,1óád,
+Frontend,TXT_MainMenu_Buttons_Exit,Exïs,
+Frontend,TXT_Tabs_Lenses,1en5es,
+Frontend,TXT_Tabs_Tech_tree,Sech 7r33,

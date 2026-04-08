@@ -1,0 +1,61 @@
+Context,ID,Text,Comments
+
+
+Backend,"BE_CargoQuantity[1]","{0:0.#}.",
+
+
+Backend,BE_resource_aluminum,"AluminumUM",
+Backend,BE_resource_carbon,"CarbonBO",
+Backend,BE_resource_chemicals,"ChemicalsHEM",
+Backend,BE_resource_crater,"Habitable CraterBLE C",
+Backend,BE_resource_drone,"Worker DroneDRON",
+Backend,BE_resource_electronics,"ElectronicsNIC",
+Backend,BE_resource_food,"FoodO",
+Backend,BE_resource_ghg_release,"GHG ReleaseEAS",
+Backend,BE_resource_glass,"GlassL",
+Backend,BE_resource_heat,"HeatH",
+Backend,BE_resource_iron,"IronN",
+Backend,BE_resource_military_drone,"Assault DroneSAUL",
+Backend,BE_resource_nitrogen_release,"Nitrogen ReleaseGEN R",
+Backend,BE_resource_carbon_dioxide_release,"CO2 ReleaseASE",
+Backend,BE_resource_oxygen_release,"Oxygen ReleaseXYGE",
+Backend,BE_resource_parts,"PartsT",
+Backend,BE_resource_silicon,"SiliconIL",
+Backend,BE_resource_special_site,"Special SiteCIAL",
+Backend,BE_resource_steel,"SteelE",
+Backend,BE_resource_water,"WaterR",
+
+
+
+
+
+Backend,BE_Building_NOT_activated,"<color=red>DEACTIVATED!</color>D!</COLOR>",
+Backend,BE_Building_NOT_powered,"<color=red>OUT OF POWER!</color>OWER!</COL",
+Backend,BE_Building_health[1],"Health: {0:P0} {",
+Backend,BE_Building_HomeDockedDrone[1],"Home-docked drone: {0}{",
+Backend,"BE_Building_AssignedDrone_SINGULAR[1]","Assigned drone: {0}}",
+Backend,"BE_Building_AssignedDrone_PLURAL[1]","Assigned drones:\n\tDrones {0}S {0",
+Backend,"BE_Building_WorkState_AwaitingConstructionMaterials","Awaiting construction materials:",
+Backend,"BE_Building_WorkState_MaterialsLine[3]","	{0} {1}/{2}0} {",
+Backend,"BE_Building_WorkState_ConstructionProgress[1]","Construction progress: {0:P0}0}",
+Backend,"BE_Building_WorkState_AwaitingUpgradeMaterials","Awaiting upgrade materials:",
+Backend,"BE_Building_WorkState_UpgradeProgress[1]","Upgrade progress: {0:P0}0}",
+Backend,"BE_Building_WorkState_ScrapProgress[1]","Scrap progress: {0:P0}:P",
+Backend,"BE_Building_WorkState_AwaitingRubbleClearOut","Awaiting rubble clear outWAITING ",
+
+
+
+Frontend,TXT_BuildPanel_Basic,BASICB,
+Frontend,TXT_BuildPanel_Mines,MINESI,
+Frontend,TXT_BuildPanel_Factories,FACTORIESFAC,
+Frontend,TXT_BuildPanel_Power,POWERW,
+Frontend,TXT_BuildPanel_Colonies,COLONIESCO,
+Frontend,TXT_BuildPanel_Terraforming,TERRAFORMINGERRA,
+Frontend,TXT_BuildPanel_Military,MILITARYRY,
+Frontend,TXT_MainMenu_Buttons_New_campaign,New CampaignCAMP,
+Frontend,TXT_MainMenu_Buttons_New_campaign_debug_no_intro,New Campaign - Debug No IntroBUG NO IN,
+Frontend,TXT_MainMenu_Buttons_Continue,ContinueCO,
+Frontend,TXT_MainMenu_Buttons_Load,LoadD,
+Frontend,TXT_MainMenu_Buttons_Exit,ExitX,
+Frontend,TXT_Tabs_Lenses,lensesNS,
+Frontend,TXT_Tabs_Tech_tree,Tech treeH T,
