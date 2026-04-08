@@ -1,0 +1,15 @@
+modId: "ConsumerGoodsMod"
+technology:
+  filenames:
+    - consumer_technology.yaml
+  replace: false
+compatibleGameVersions:
+  - "1.8.3"
+resource:
+  filenames:
+    - consumer_resource.yaml
+  replace: false
+building:
+  filenames:
+    - consumer_buildings.yaml
+  replace: false

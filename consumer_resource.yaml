@@ -1,0 +1,9 @@
+resource_consumer_goods:
+  color: "FF00A0"
+  index: 27
+  knowledge: null
+  materialType: Manufactured
+  name: "Consumer Goods"
+  prefabName: Electronics
+  iconName: Resource Icons/Electronics
+  cubeMaterial: ResourceCube

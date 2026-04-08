@@ -1,0 +1,12 @@
+technology_colony_tent:
+  actions:  
+    - arguments:
+        - PlayerFaction
+        - building_colony_tent_city
+      command: UnlockBuilding
+      daysDelay: 0.0
+    - arguments:
+        - PlayerFaction
+        - building_consumer_factory
+      command: UnlockBuilding
+      daysDelay: 0.0
