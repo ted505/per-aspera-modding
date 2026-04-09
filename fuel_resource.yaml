@@ -1,0 +1,8 @@
+resource_fuel:
+  color: "FFA500"
+  index: 24
+  materialType: Manufactured
+  name: "High-Density Fuel"
+  prefabName: Fuel
+  cubeMaterial: ResourceCube
+  iconName: Resource Icons/Oxygen Negative

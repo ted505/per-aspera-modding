@@ -1,15 +1,27 @@
-modId: "ConsumerGoodsMod"
+modId: "ExpandedSupplyChains"
+initialSetup: InitialSetup.yaml
 technology:
   filenames:
     - consumer_technology.yaml
+    - fuel_technology.yaml
+  replace: false
+knowledge:
+  filenames:
+    - consumer_knowledge.yaml
   replace: false
 compatibleGameVersions:
   - "1.8.3"
 resource:
   filenames:
+    - fuel_resource.yaml
     - consumer_resource.yaml
   replace: false
 building:
   filenames:
     - consumer_buildings.yaml
+    - fuel_buildings.yaml
+  replace: false
+project:
+  filenames:
+    - fuel_projects.yaml
   replace: false

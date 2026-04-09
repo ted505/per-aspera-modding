@@ -1,0 +1,15 @@
+technology_factory_upgrade_2:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - building_fuel_refinery_2
+      command: UnlockBuilding
+      daysDelay: 0.0
+
+technology_factory_upgrade_3:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - building_fuel_refinery_3
+      command: UnlockBuilding
+      daysDelay: 0.0

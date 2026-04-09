@@ -1,0 +1,194 @@
+# SATELLITE LAUNCHES
+project_launch_satellite_1:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_2:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_3:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_4:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_5:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_6:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_7:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_8:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_9:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_10:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_11:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_launch_satellite_12:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+
+# RESOURCE IMPORTS
+project_import_ghg_from_earth:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 1
+project_import_ice_from_europa:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 20
+      !resource resource_parts: 20
+      !resource resource_electronics: 20
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 10
+project_import_nitrogen_from_titan:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 40
+      !resource resource_parts: 40
+      !resource resource_electronics: 40
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 20
+
+# ASTEROID MANEUVERS
+project_aerobrake_methane_asteroid:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_aerobrake_ice_asteroid:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_aerobrake_nitrogen_rich_asteroid:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_deimos_down:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 30
+      !resource resource_parts: 30
+      !resource resource_electronics: 30
+      !resource resource_uranium: 30
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 15
+project_crash_comet:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 30
+      !resource resource_parts: 30
+      !resource resource_electronics: 30
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 15
+
+# OTHER PROJECTS
+project_black_polar_dust:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5
+project_space_elevator:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_carbon: 100
+      !resource resource_fuel: 5
+project_magnetic_shield:
+  portProjectType:
+    requiredDevelopmentResources:
+      !resource resource_iron: 100
+      !resource resource_aluminum: 10
+      !resource resource_parts: 10
+      !resource resource_electronics: 10
+      !resource resource_chemicals: 0
+      !resource resource_fuel: 5

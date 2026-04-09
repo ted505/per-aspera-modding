@@ -1,0 +1,7 @@
+knowledge_consumer_goods:
+  content: "Advanced luxury items and electronics for Martian citizens."
+  image: null
+  iconName: Resource Icons/Electronics
+  path: Operational Directives/Base Expansion/Consumer Goods
+  localizedPath: Operational Directives/Base Expansion/Consumer Goods
+  title: "Consumer Goods"

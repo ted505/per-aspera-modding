@@ -1,0 +1,119 @@
+building_fuel_refinery:
+  availability: PLAYER_ONLY
+  categoryType: !buildingCategory category_factories
+  compactName: FuelRe1
+  description: "Synthesizes high-density methane propellant from Chemicals, Water, and Carbon."
+  droneCapacity: 1
+  knowledge: null
+  healthLossPerDay: 0.05
+  inputResources:
+    !resource resource_chemicals: 2
+    !resource resource_water: 1
+    !resource resource_carbon: 1
+  maxHealth: 100.0
+  name: "Fuel Refinery"
+  outputQuantity: 1
+  outputResource: !resource resource_fuel
+  powerConsumption: 10.0
+  powerPriority: 3.0
+  prefabName: ChemicalPlant_1
+  rubblePrefabName: RubblePile_M
+  progressPerDay: 0.1
+  requiredConstructionResources:
+    !resource resource_aluminum: 3
+    !resource resource_steel: 3
+    !resource resource_glass: 3
+    !resource resource_silicon: 3
+  requiredResourceVein: null
+  reservedRadius: 35.0
+  waySnapRadius: 10.0
+  iconName: BuildIcons/Icon_ChemicalPlant_1
+  categorySoundOverride: Sfx_Gameplay_BuildingBIP_Factories_Chemicals
+
+building_fuel_refinery_2:
+  isUpgradeTo:
+    - !building building_fuel_refinery
+  availability: PLAYER_ONLY
+  categoryType: !buildingCategory category_factories
+  compactName: FuelRe2
+  description: "Advanced Sabatier Plant with increased processing efficiency."
+  droneCapacity: 1
+  knowledge: null
+  healthLossPerDay: 0.05
+  inputResources:
+    !resource resource_chemicals: 2
+    !resource resource_water: 1
+    !resource resource_carbon: 1
+  maxHealth: 150.0
+  name: "Fuel Refinery 2"
+  outputQuantity: 1
+  outputResource: !resource resource_fuel
+  powerConsumption: 20.0
+  powerPriority: 3.0
+  prefabName: ChemicalPlant_2
+  rubblePrefabName: RubblePile_M
+  progressPerDay: 0.15
+  requiredConstructionResources:
+    !resource resource_aluminum: 10
+    !resource resource_steel: 10
+    !resource resource_glass: 10
+    !resource resource_silicon: 10
+  requiredResourceVein: null
+  reservedRadius: 35.0
+  waySnapRadius: 10.0
+  iconName: BuildIcons/Icon_ChemicalPlant_2
+  categorySoundOverride: Sfx_Gameplay_BuildingBIP_Factories_Chemicals
+
+building_fuel_refinery_3:
+  isUpgradeTo:
+    - !building building_fuel_refinery_2
+  availability: PLAYER_ONLY
+  categoryType: !buildingCategory category_factories
+  compactName: FuelRe3
+  description: "State-of-the-art chemical synthesis facility for high-volume propellant production."
+  droneCapacity: 1
+  knowledge: null
+  healthLossPerDay: 0.05
+  inputResources:
+    !resource resource_chemicals: 2
+    !resource resource_water: 1
+    !resource resource_carbon: 1
+  maxHealth: 200.0
+  name: "Fuel Refinery 3"
+  outputQuantity: 1
+  outputResource: !resource resource_fuel
+  powerConsumption: 30.0
+  powerPriority: 3.0
+  prefabName: ChemicalPlant_3
+  rubblePrefabName: RubblePile_M
+  progressPerDay: 0.2
+  requiredConstructionResources:
+    !resource resource_aluminum: 20
+    !resource resource_steel: 20
+    !resource resource_glass: 20
+    !resource resource_silicon: 20
+  requiredResourceVein: null
+  reservedRadius: 35.0
+  waySnapRadius: 10.0
+  iconName: BuildIcons/Icon_ChemicalPlant_3
+  categorySoundOverride: Sfx_Gameplay_BuildingBIP_Factories_Chemicals
+
+building_terraforming_ghg_factory:
+  description: "Releases Greenhouse Gases into the atmosphere using High-Density Fuel."
+  inputResources:
+    !resource resource_fuel: 1
+  gasReleaseAmount: 0.0001
+
+
+power_fission_plant:
+  name: "Uranium Fission Reactor"
+  inputResources:
+    !resource resource_uranium: 1
+  progressPerDay: 0.00274
+  outputResource: !resource resource_ghg_release
+  outputQuantity: 1
+  gasReleaseAmount: 0.00001
+
+building_areological_scanner:
+  scannerScanRadius: 1000.0
+  scannerScanTime: 0.1

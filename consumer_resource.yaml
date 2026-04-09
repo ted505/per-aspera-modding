@@ -1,7 +1,7 @@
 resource_consumer_goods:
   color: "FF00A0"
   index: 27
-  knowledge: null
+  knowledge: !knowledge knowledge_consumer_goods
   materialType: Manufactured
   name: "Consumer Goods"
   prefabName: Electronics

@@ -85,5 +85,4 @@ unlockedBuildings:
   - !building building_areological_scanner
   - !building building_spaceport
   - !building power_solar_panel_field
-  - !building building_consumer_factory
-  - !building building_test_factory
+  - !building building_fuel_refinery

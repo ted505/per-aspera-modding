@@ -1,15 +1,16 @@
 building_consumer_factory:
   availability: PLAYER_ONLY
   categoryType: !buildingCategory category_factories
-  compactName: ConsFact
-  description: "Consumer Factory"
+  compactName: ConsFa1
+  description: "Universal factory for citizen consumer goods."
   droneCapacity: 1
   knowledge: null
   healthLossPerDay: 0.05
   inputResources:
-    !resource resource_glass: 1
+    !resource resource_parts: 1
+    !resource resource_electronics: 1
     !resource resource_polymers: 1
-  maxHealth: 150.0
+  maxHealth: 100.0
   name: "Consumer Goods Factory"
   outputQuantity: 1
   outputResource: !resource resource_consumer_goods
@@ -19,9 +20,9 @@ building_consumer_factory:
   rubblePrefabName: RubblePile_M
   progressPerDay: 0.1
   requiredConstructionResources:
-    !resource resource_aluminum: 10
-    !resource resource_steel: 10
-    !resource resource_glass: 10
+    !resource resource_electronics: 3
+    !resource resource_aluminum: 3
+    !resource resource_glass: 3
   requiredResourceVein: null
   reservedRadius: 20.0
   waySnapRadius: 10.0
@@ -33,10 +34,91 @@ building_consumer_factory:
   pipesConsumption: 0
   categorySoundOverride: Sfx_Gameplay_BuildingBIP_Factories_Electronics
 
+building_consumer_factory_2:
+  isUpgradeTo:
+    - !building building_consumer_factory
+  availability: PLAYER_ONLY
+  categoryType: !buildingCategory category_factories
+  compactName: ConsFa2
+  description: "Expanded consumer goods production line."
+  droneCapacity: 1
+  knowledge: null
+  healthLossPerDay: 0.05
+  inputResources:
+    !resource resource_parts: 1
+    !resource resource_electronics: 1
+    !resource resource_polymers: 1
+  maxHealth: 150.0
+  name: "Consumer Goods Factory 2"
+  outputQuantity: 1
+  outputResource: !resource resource_consumer_goods
+  powerConsumption: 10.0
+  powerPriority: 3.0
+  prefabName: ElectronicsFactory_2
+  rubblePrefabName: RubblePile_M
+  progressPerDay: 0.15
+  requiredConstructionResources:
+    !resource resource_electronics: 10
+    !resource resource_aluminum: 10
+    !resource resource_glass: 10
+  requiredResourceVein: null
+  reservedRadius: 20.0
+  waySnapRadius: 10.0
+  jumpRadius: 200.0
+  rivalIconName: BuildIcons_Rival/Icon_Electronics_2
+  iconName: BuildIcons/Icon_Electronics_2
+  progressBarNames:
+    - Progress_Torus
+  pipesConsumption: 0
+  categorySoundOverride: Sfx_Gameplay_BuildingBIP_Factories_Electronics
+
+building_consumer_factory_3:
+  isUpgradeTo:
+    - !building building_consumer_factory_2
+  availability: PLAYER_ONLY
+  categoryType: !buildingCategory category_factories
+  compactName: ConsFa3
+  description: "High-throughput automated consumer goods manufacturing."
+  droneCapacity: 1
+  knowledge: null
+  healthLossPerDay: 0.05
+  inputResources:
+    !resource resource_parts: 1
+    !resource resource_electronics: 1
+    !resource resource_polymers: 1
+  maxHealth: 200.0
+  name: "Consumer Goods Factory 3"
+  outputQuantity: 1
+  outputResource: !resource resource_consumer_goods
+  powerConsumption: 15.0
+  powerPriority: 3.0
+  prefabName: ElectronicsFactory_3
+  rubblePrefabName: RubblePile_M
+  progressPerDay: 0.2
+  requiredConstructionResources:
+    !resource resource_electronics: 20
+    !resource resource_aluminum: 20
+    !resource resource_glass: 20
+  requiredResourceVein: null
+  reservedRadius: 20.0
+  waySnapRadius: 10.0
+  jumpRadius: 200.0
+  rivalIconName: BuildIcons_Rival/Icon_Electronics_3
+  iconName: BuildIcons/Icon_Electronics_3
+  progressBarNames:
+    - Progress_Torus
+  pipesConsumption: 0
+  categorySoundOverride: Sfx_Gameplay_BuildingBIP_Factories_Electronics
+
+building_colony_dome_small:
+  inputResources:
+    !resource resource_food: 15
+    !resource resource_consumer_goods: 4
+
 building_colony_open_city:
   inputResources:
     !resource resource_food: 30
-    !resource resource_consumer_goods: 10
+    !resource resource_consumer_goods: 8
 
 building_colony_metropolis:
   inputResources:
@@ -46,4 +128,4 @@ building_colony_metropolis:
 building_colony_tent_city:
   inputResources:
     !resource resource_food: 20
-    !resource resource_consumer_goods: 5
+    !resource resource_consumer_goods: 6

@@ -1,5 +1,23 @@
+technology_colony_dome:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - building_colony_dome_small
+      command: UnlockBuilding
+      daysDelay: 0.0
+    - arguments:
+        - PlayerFaction
+        - building_consumer_factory
+      command: UnlockBuilding
+      daysDelay: 0.0
+    - arguments:
+        - PlayerFaction
+        - knowledge_consumer_goods
+      command: UnlockKnowledge
+      daysDelay: 0.0
+
 technology_colony_tent:
-  actions:  
+  actions:
     - arguments:
         - PlayerFaction
         - building_colony_tent_city
@@ -7,6 +25,19 @@ technology_colony_tent:
       daysDelay: 0.0
     - arguments:
         - PlayerFaction
-        - building_consumer_factory
+        - building_consumer_factory_2
+      command: UnlockBuilding
+      daysDelay: 0.0
+
+technology_colony_tent_2:
+  actions:
+    - arguments:
+        - PlayerFaction
+        - building_colony_open_city
+      command: UnlockBuilding
+      daysDelay: 0.0
+    - arguments:
+        - PlayerFaction
+        - building_consumer_factory_3
       command: UnlockBuilding
       daysDelay: 0.0
